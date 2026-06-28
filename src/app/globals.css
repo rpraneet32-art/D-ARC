@@ -13,8 +13,8 @@
 
 @layer base {
   :root {
-    --background: var(--color-brand-black);
-    --foreground: var(--color-brand-white);
+    --background: #FAFAFA;
+    --foreground: var(--color-brand-black);
   }
 
   body {

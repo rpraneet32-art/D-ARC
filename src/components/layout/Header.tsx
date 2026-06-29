@@ -10,15 +10,18 @@ import { Logo } from '../shared/Logo';
 // Mega Menu Data
 const megaMenus = {
   services: [
-    { title: 'Architecture', href: '/services/architecture', desc: 'Cutting-edge structural design.' },
-    { title: 'Interior Design', href: '/services/interior-design', desc: 'Premium interior curation.' },
-    { title: 'Construction', href: '/services/construction', desc: 'End-to-end building execution.' },
-    { title: 'Turnkey Projects', href: '/services/turnkey-projects', desc: 'From blueprint to final handover.' },
+    { title: 'Architectural Design', href: '/services/architecture', desc: 'From residential homes to commercial buildings.' },
+    { title: 'Interior Design', href: '/services/interior-design', desc: 'Stunning, functional spaces that reflect your style.' },
+    { title: 'Construction', href: '/services/construction', desc: 'Meticulous attention to detail and high-quality materials.' },
+    { title: 'Modular Kitchen', href: '/services/modular-kitchen', desc: 'Style + functionality for the heart of your home.' },
+    { title: 'Home Renovation', href: '/services/home-renovation', desc: 'Transforming existing spaces into dream homes.' },
+    { title: 'Turnkey Projects', href: '/services/turnkey-projects', desc: 'Comprehensive solutions from concept to completion.' }
   ],
   expertise: [
-    { title: 'Residential', href: '/expertise/residential-architecture', desc: 'Luxury homes & villas.' },
-    { title: 'Commercial', href: '/expertise/commercial-spaces', desc: 'Offices & retail environments.' },
-    { title: 'Hospitality', href: '/expertise/hospitality', desc: 'Hotels, resorts & restaurants.' },
+    { title: 'Residential', href: '/expertise/residential-architecture', desc: 'Custom home designs tailored to your lifestyle.' },
+    { title: 'Commercial', href: '/expertise/commercial-architecture', desc: 'Innovative workspaces and retail environments.' },
+    { title: 'Luxury Villas', href: '/expertise/luxury-villas', desc: 'High-end bespoke residences with premium finishes.' },
+    { title: 'Sustainable Design', href: '/expertise/sustainable-design', desc: 'Eco-friendly architecture for a better tomorrow.' }
   ],
   company: [
     { title: 'About D-Arc', href: '/company', desc: 'Our legacy and vision.' },

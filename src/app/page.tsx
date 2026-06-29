@@ -12,6 +12,8 @@ import { WhyChooseDArc } from '@/components/home/WhyChooseDArc';
 import { Testimonials } from '@/components/home/Testimonials';
 import { CoverageAreas } from '@/components/home/CoverageAreas';
 import { LatestBlogs } from '@/components/home/LatestBlogs';
+import { MobileStickyCTA } from '@/components/layout/MobileStickyCTA';
+import { FAQ } from '@/components/shared/FAQ';
 
 export default function Home() {
   return (
@@ -72,7 +74,7 @@ export default function Home() {
                 alt="D-Arc Showroom Interior"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-700"
+                className="object-cover rounded-sm transition-all duration-700"
               />
             </FadeIn>
           </div>
@@ -87,6 +89,9 @@ export default function Home() {
 
       {/* 5. Construction & Turnkey Solutions */}
       <ConstructionTurnkey />
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* 6. Featured Projects */}
       <FeaturedProjects />

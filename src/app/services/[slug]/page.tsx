@@ -1,4 +1,5 @@
 import { services } from "@/data/services";
+import { FAQ } from "@/components/shared/FAQ";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -62,6 +63,9 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </div>
       </div>
+      
+      {/* FAQ Section */}
+      <FAQ />
     </main>
   );
 }

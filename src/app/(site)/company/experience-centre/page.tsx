@@ -8,6 +8,8 @@ export const metadata: Metadata = {
 
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
+import { FAQ } from "@/components/shared/FAQ";
+
 export default function ExperienceCentrePage() {
   return (
     <main className="min-h-screen pt-24 pb-20">
@@ -52,7 +54,7 @@ export default function ExperienceCentrePage() {
         </div>
 
         {/* Sofa Studio Section */}
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto mb-24">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-brand-black mb-6">The Sofa Studio</h2>
             <div className="w-20 h-1 bg-brand-gold mx-auto mb-8"></div>
@@ -92,6 +94,8 @@ export default function ExperienceCentrePage() {
           </div>
         </div>
       </div>
+      
+      <FAQ />
     </main>
   );
 }

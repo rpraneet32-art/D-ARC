@@ -4,12 +4,14 @@ import { FAQ } from "@/components/shared/FAQ";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
+import { services as staticServices } from "@/data/services";
 
 export async function generateStaticParams() {
-  const services = await client.fetch<any[]>(SERVICES_QUERY);
-  return services.map((service) => ({
-    slug: service.slug.current,
-  }));
+  const sanityServices = await client.fetch<any[]>(SERVICES_QUERY);
+  const sanitySlugs = sanityServices.map((service) => service.slug.current);
+  const staticSlugs = staticServices.map((service) => service.slug);
+  const allSlugs = Array.from(new Set([...sanitySlugs, ...staticSlugs]));
+  return allSlugs.map((slug) => ({ slug }));
 }
 
 type Props = {
@@ -18,8 +20,12 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
-  const service = await client.fetch<any>(SERVICE_BY_SLUG_QUERY, { slug: resolvedParams.slug });
+  let service = await client.fetch<any>(SERVICE_BY_SLUG_QUERY, { slug: resolvedParams.slug });
   
+  if (!service) {
+    service = staticServices.find((s) => s.slug === resolvedParams.slug);
+  }
+
   if (!service) {
     return {
       title: "Service Not Found",
@@ -30,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${service.title} | D-Arc Architectural Interiors`,
     description: service.shortDescription,
     alternates: {
-      canonical: `/services/${service.slug.current}`,
+      canonical: `/services/${service.slug?.current || service.slug}`,
     },
   };
 }
@@ -39,7 +45,11 @@ import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
 export default async function ServicePage({ params }: Props) {
   const resolvedParams = await params;
-  const service = await client.fetch<any>(SERVICE_BY_SLUG_QUERY, { slug: resolvedParams.slug });
+  let service = await client.fetch<any>(SERVICE_BY_SLUG_QUERY, { slug: resolvedParams.slug });
+
+  if (!service) {
+    service = staticServices.find((s) => s.slug === resolvedParams.slug);
+  }
 
   if (!service) {
     notFound();

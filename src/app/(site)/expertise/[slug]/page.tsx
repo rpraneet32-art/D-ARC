@@ -4,12 +4,14 @@ import { FAQ } from "@/components/shared/FAQ";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
+import { expertise as staticExpertises } from "@/data/expertise";
 
 export async function generateStaticParams() {
-  const expertises = await client.fetch<any[]>(EXPERTISE_QUERY);
-  return expertises.map((item) => ({
-    slug: item.slug.current,
-  }));
+  const sanityExpertises = await client.fetch<any[]>(EXPERTISE_QUERY);
+  const sanitySlugs = sanityExpertises.map((item) => item.slug.current);
+  const staticSlugs = staticExpertises.map((item) => item.slug);
+  const allSlugs = Array.from(new Set([...sanitySlugs, ...staticSlugs]));
+  return allSlugs.map((slug) => ({ slug }));
 }
 
 type Props = {
@@ -18,8 +20,12 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
-  const item = await client.fetch<any>(EXPERTISE_BY_SLUG_QUERY, { slug: resolvedParams.slug });
+  let item = await client.fetch<any>(EXPERTISE_BY_SLUG_QUERY, { slug: resolvedParams.slug });
   
+  if (!item) {
+    item = staticExpertises.find((s) => s.slug === resolvedParams.slug);
+  }
+
   if (!item) {
     return {
       title: "Expertise Not Found",
@@ -30,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${item.title} | D-Arc Architectural Interiors`,
     description: item.shortDescription,
     alternates: {
-      canonical: `/expertise/${item.slug.current}`,
+      canonical: `/expertise/${item.slug?.current || item.slug}`,
     },
   };
 }
@@ -39,7 +45,11 @@ import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
 export default async function ExpertiseDetailPage({ params }: Props) {
   const resolvedParams = await params;
-  const item = await client.fetch<any>(EXPERTISE_BY_SLUG_QUERY, { slug: resolvedParams.slug });
+  let item = await client.fetch<any>(EXPERTISE_BY_SLUG_QUERY, { slug: resolvedParams.slug });
+
+  if (!item) {
+    item = staticExpertises.find((s) => s.slug === resolvedParams.slug);
+  }
 
   if (!item) {
     notFound();

@@ -10,6 +10,8 @@ export const metadata = {
 };
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
+import { FAQ } from "@/components/shared/FAQ";
+
 export default function ExpertisePage() {
   const schemaData = {
     "@context": "https://schema.org",
@@ -33,7 +35,7 @@ export default function ExpertisePage() {
           With years of experience across diverse architectural typologies, our specialized expertise ensures that your specific project requirements are met with unparalleled precision.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
           {expertise.map((item) => (
             <Link 
               key={item.slug}
@@ -58,6 +60,8 @@ export default function ExpertisePage() {
           ))}
         </div>
       </div>
+      
+      <FAQ />
     </main>
   );
 }

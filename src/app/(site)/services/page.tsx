@@ -10,6 +10,8 @@ export const metadata = {
 };
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
+import { FAQ } from "@/components/shared/FAQ";
+
 export default function ServicesPage() {
   return (
     <main className="min-h-screen pt-24 pb-20">
@@ -20,7 +22,7 @@ export default function ServicesPage() {
           From conceptual design to final construction, D-Arc offers a comprehensive suite of architectural and interior design services tailored to your exact needs.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
           {services.map((service) => (
             <Link 
               key={service.slug}
@@ -45,6 +47,8 @@ export default function ServicesPage() {
           ))}
         </div>
       </div>
+      
+      <FAQ />
     </main>
   );
 }

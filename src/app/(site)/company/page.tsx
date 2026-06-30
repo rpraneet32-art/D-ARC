@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
+import { FAQ } from "@/components/shared/FAQ";
+
 export default function CompanyPage() {
   const schemaData = {
     "@context": "https://schema.org",
@@ -68,6 +70,8 @@ export default function CompanyPage() {
           </div>
         </div>
       </div>
+      
+      <FAQ />
     </main>
   );
 }

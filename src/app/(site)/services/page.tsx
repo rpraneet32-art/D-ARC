@@ -4,12 +4,17 @@ import { services } from "@/data/services";
 export const metadata = {
   title: "Our Services | D-Arc Architectural Interiors",
   description: "Explore our premium architecture, interior design, construction, and turnkey project services in Kannur.",
+  alternates: {
+    canonical: "/services",
+  },
 };
+import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
 export default function ServicesPage() {
   return (
     <main className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-6">
+        <Breadcrumb />
         <h1 className="text-4xl md:text-5xl font-serif text-brand-gold mb-6">Our Services</h1>
         <p className="text-brand-grey max-w-2xl mb-12 text-lg">
           From conceptual design to final construction, D-Arc offers a comprehensive suite of architectural and interior design services tailored to your exact needs.

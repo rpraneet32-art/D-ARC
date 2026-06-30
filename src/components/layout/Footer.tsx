@@ -1,8 +1,13 @@
+"use client";
+
 import Link from 'next/link';
 import { Logo } from '../shared/Logo';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname.startsWith('/studio')) return null;
   return (
     <footer className="bg-brand-black border-t border-white/10 pt-16 pb-24 md:pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

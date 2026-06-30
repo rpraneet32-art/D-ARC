@@ -1,12 +1,14 @@
-import { expertise } from "@/data/expertise";
+import { client } from "@/sanity/lib/client";
+import { EXPERTISE_QUERY, EXPERTISE_BY_SLUG_QUERY } from "@/sanity/lib/queries";
 import { FAQ } from "@/components/shared/FAQ";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
 
 export async function generateStaticParams() {
-  return expertise.map((item) => ({
-    slug: item.slug,
+  const expertises = await client.fetch<any[]>(EXPERTISE_QUERY);
+  return expertises.map((item) => ({
+    slug: item.slug.current,
   }));
 }
 
@@ -16,7 +18,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
-  const item = expertise.find((e) => e.slug === resolvedParams.slug);
+  const item = await client.fetch<any>(EXPERTISE_BY_SLUG_QUERY, { slug: resolvedParams.slug });
   
   if (!item) {
     return {
@@ -27,12 +29,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${item.title} | D-Arc Architectural Interiors`,
     description: item.shortDescription,
+    alternates: {
+      canonical: `/expertise/${item.slug.current}`,
+    },
   };
 }
 
+import { Breadcrumb } from "@/components/shared/Breadcrumb";
+
 export default async function ExpertiseDetailPage({ params }: Props) {
   const resolvedParams = await params;
-  const item = expertise.find((e) => e.slug === resolvedParams.slug);
+  const item = await client.fetch<any>(EXPERTISE_BY_SLUG_QUERY, { slug: resolvedParams.slug });
 
   if (!item) {
     notFound();
@@ -41,6 +48,7 @@ export default async function ExpertiseDetailPage({ params }: Props) {
   return (
     <main className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-6">
+        <Breadcrumb />
         <Link href="/expertise" className="text-brand-gold hover:text-brand-black transition-colors mb-8 inline-flex items-center text-sm font-semibold uppercase tracking-wider">
           <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />

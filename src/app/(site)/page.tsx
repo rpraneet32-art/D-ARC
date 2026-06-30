@@ -16,8 +16,37 @@ import { MobileStickyCTA } from '@/components/layout/MobileStickyCTA';
 import { FAQ } from '@/components/shared/FAQ';
 
 export default function Home() {
+  const schemaData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "D-Arc Architectural Interiors",
+      "image": "https://www.darcinterior.com/og-image.jpg",
+      "url": "https://www.darcinterior.com",
+      "telephone": "+917907009322",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Therur",
+        "addressLocality": "Kannur",
+        "addressRegion": "Kerala",
+        "postalCode": "670795",
+        "addressCountry": "IN"
+      },
+      "priceRange": "$$$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "125"
+      }
+    }
+  ];
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       {/* 1. Hero */}
       <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

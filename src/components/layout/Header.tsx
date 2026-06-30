@@ -36,6 +36,8 @@ export function Header() {
 
   let timeoutId: NodeJS.Timeout;
 
+  if (pathname.startsWith('/studio')) return null;
+
   const handleMouseEnter = (menu: string) => {
     clearTimeout(timeoutId);
     setActiveMenu(menu);

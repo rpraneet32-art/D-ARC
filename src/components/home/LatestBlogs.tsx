@@ -1,31 +1,13 @@
-"use client";
-
 import { FadeIn } from '@/components/animations/FadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
+import { client } from "@/sanity/lib/client";
+import { BLOGS_QUERY } from "@/sanity/lib/queries";
+import { urlForImage } from "@/sanity/lib/image";
 
-const blogs = [
-  {
-    title: "The Rise of Minimalist Architecture in Kerala",
-    category: "Architecture",
-    date: "Oct 12, 2025",
-    image: "/assets/projects/WhatsApp Image 2026-06-26 at 15.18.52 (1).jpeg"
-  },
-  {
-    title: "Selecting the Perfect Fabric for Custom Sofas",
-    category: "Interior Design",
-    date: "Sep 28, 2025",
-    image: "/assets/projects/WhatsApp Image 2026-06-26 at 15.18.47.jpeg"
-  },
-  {
-    title: "Sustainable Materials for Modern Villas",
-    category: "Construction",
-    date: "Sep 15, 2025",
-    image: "/assets/projects/WhatsApp Image 2026-06-26 at 15.18.49.jpeg"
-  }
-];
-
-export function LatestBlogs() {
+export async function LatestBlogs() {
+  const allBlogs = await client.fetch<any[]>(BLOGS_QUERY);
+  const blogs = allBlogs.slice(0, 3);
   return (
     <section className="py-32 bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,7 +33,7 @@ export function LatestBlogs() {
             <FadeIn key={idx} direction="up" delay={idx * 0.15} className="group cursor-pointer">
               <div className="relative h-64 w-full mb-6 overflow-hidden rounded-sm">
                 <Image 
-                  src={blog.image}
+                  src={blog.mainImage ? urlForImage(blog.mainImage).url() : '/assets/projects/placeholder.jpeg'}
                   alt={blog.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -59,9 +41,9 @@ export function LatestBlogs() {
                 />
               </div>
               <div className="flex items-center text-sm font-medium text-brand-grey mb-3 space-x-4">
-                <span className="text-brand-gold">{blog.category}</span>
+                <span className="text-brand-gold">{blog.categories?.[0] || 'Design'}</span>
                 <span>&bull;</span>
-                <span>{blog.date}</span>
+                <span>{new Date(blog.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
               </div>
               <h4 className="text-2xl font-serif font-bold text-brand-black group-hover:text-brand-gold transition-colors leading-snug">
                 {blog.title}

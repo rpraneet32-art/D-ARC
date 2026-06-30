@@ -1,25 +1,14 @@
-"use client";
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { FadeIn } from '@/components/animations/FadeIn';
+import { client } from "@/sanity/lib/client";
+import { PORTFOLIO_QUERY } from "@/sanity/lib/queries";
+import { urlForImage } from "@/sanity/lib/image";
 
-const projects = [
-  {
-    title: "The Glass House",
-    category: "Residential Villa",
-    location: "Kannur",
-    image: "/assets/projects/WhatsApp Image 2026-06-26 at 15.18.52 (1).jpeg"
-  },
-  {
-    title: "Urban Minimalist",
-    category: "Interior Design",
-    location: "Thalassery",
-    image: "/assets/projects/WhatsApp Image 2026-06-26 at 15.18.49.jpeg"
-  }
-];
-
-export function FeaturedProjects() {
+export async function FeaturedProjects() {
+  const allProjects = await client.fetch<any[]>(PORTFOLIO_QUERY);
+  // Slice to only show top 4 projects
+  const projects = allProjects.slice(0, 4);
   return (
     <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +31,7 @@ export function FeaturedProjects() {
             <FadeIn key={idx} direction="up" delay={idx * 0.2} className="group cursor-pointer">
               <div className="relative h-[600px] w-full mb-6 overflow-hidden rounded-sm">
                 <Image 
-                  src={project.image}
+                  src={project.mainImage ? urlForImage(project.mainImage).url() : '/assets/projects/placeholder.jpeg'}
                   alt={project.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

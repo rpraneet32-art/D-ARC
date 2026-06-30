@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { FadeIn } from '@/components/animations/FadeIn';
 
+import { Breadcrumb } from "@/components/shared/Breadcrumb";
+
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -38,9 +40,46 @@ export default function ContactUsPage() {
     window.open(whatsappUrl, "_blank");
   };
 
+  const schemaData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "ContactPoint",
+        "telephone": "+917907009322",
+        "contactType": "customer support",
+        "areaServed": "IN",
+        "availableLanguage": ["en", "ml"]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Place",
+      "name": "D-Arc Architectural Interiors",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Therur",
+        "addressLocality": "Kannur",
+        "addressRegion": "Kerala",
+        "postalCode": "670795",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.9329711,
+        "longitude": 75.5670868
+      }
+    }
+  ];
+
   return (
     <main className="min-h-screen pt-32 pb-20 bg-[#FAFAFA]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumb />
         <FadeIn direction="up" className="text-center mb-24">
           <h1 className="text-sm font-semibold text-brand-gold uppercase tracking-widest mb-4">
             Get Project Estimate

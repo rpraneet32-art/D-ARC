@@ -1,7 +1,12 @@
+"use client";
+
 import Link from 'next/link';
 import { MessageCircle, FileText } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 export function MobileStickyCTA() {
+  const pathname = usePathname();
+  if (pathname.startsWith('/studio')) return null;
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-brand-black border-t border-white/10 p-4 md:hidden flex justify-between items-center gap-4">
       <a 

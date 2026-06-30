@@ -4,12 +4,30 @@ import { expertise } from "@/data/expertise";
 export const metadata = {
   title: "Our Expertise | D-Arc Architectural Interiors",
   description: "Discover our specialized expertise in residential architecture, commercial spaces, luxury villas, and sustainable design.",
+  alternates: {
+    canonical: "/expertise",
+  },
 };
+import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
 export default function ExpertisePage() {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Architect",
+    "name": "D-Arc Architectural Interiors",
+    "image": "https://www.darcinterior.com/og-image.jpg",
+    "url": "https://www.darcinterior.com/expertise",
+    "telephone": "+917907009322",
+  };
+
   return (
     <main className="min-h-screen pt-24 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className="container mx-auto px-6">
+        <Breadcrumb />
         <h1 className="text-4xl md:text-5xl font-serif text-brand-gold mb-6">Our Expertise</h1>
         <p className="text-brand-grey max-w-2xl mb-12 text-lg">
           With years of experience across diverse architectural typologies, our specialized expertise ensures that your specific project requirements are met with unparalleled precision.

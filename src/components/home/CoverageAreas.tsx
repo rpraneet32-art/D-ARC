@@ -1,15 +1,12 @@
-"use client";
-
 import { FadeIn } from '@/components/animations/FadeIn';
 import Link from 'next/link';
+import { client } from "@/sanity/lib/client";
+import { LOCATIONS_QUERY } from "@/sanity/lib/queries";
 
-const locations = [
-  "Kannur District", "Kannur Town", "Kannur City", "Taliparamba", 
-  "Pazhayangadi", "Mattool", "Mattannur", "Chakkarakkal", "Iritty", 
-  "Irikkur", "Sreekandapuram", "Panoor", "Nadapuram", "Vadakara"
-];
-
-export function CoverageAreas() {
+export async function CoverageAreas() {
+  const locationDocs = await client.fetch<any[]>(LOCATIONS_QUERY);
+  const locations = locationDocs.map(doc => doc.name);
+  
   return (
     <section className="py-32 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

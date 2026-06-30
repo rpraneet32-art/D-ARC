@@ -1,12 +1,14 @@
-import { services } from "@/data/services";
+import { client } from "@/sanity/lib/client";
+import { SERVICES_QUERY, SERVICE_BY_SLUG_QUERY } from "@/sanity/lib/queries";
 import { FAQ } from "@/components/shared/FAQ";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
 
 export async function generateStaticParams() {
+  const services = await client.fetch<any[]>(SERVICES_QUERY);
   return services.map((service) => ({
-    slug: service.slug,
+    slug: service.slug.current,
   }));
 }
 
@@ -16,7 +18,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
-  const service = services.find((s) => s.slug === resolvedParams.slug);
+  const service = await client.fetch<any>(SERVICE_BY_SLUG_QUERY, { slug: resolvedParams.slug });
   
   if (!service) {
     return {
@@ -27,12 +29,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${service.title} | D-Arc Architectural Interiors`,
     description: service.shortDescription,
+    alternates: {
+      canonical: `/services/${service.slug.current}`,
+    },
   };
 }
 
+import { Breadcrumb } from "@/components/shared/Breadcrumb";
+
 export default async function ServicePage({ params }: Props) {
   const resolvedParams = await params;
-  const service = services.find((s) => s.slug === resolvedParams.slug);
+  const service = await client.fetch<any>(SERVICE_BY_SLUG_QUERY, { slug: resolvedParams.slug });
 
   if (!service) {
     notFound();
@@ -41,6 +48,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <main className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-6">
+        <Breadcrumb />
         <Link href="/services" className="text-brand-gold hover:text-brand-black transition-colors mb-8 inline-flex items-center text-sm font-semibold uppercase tracking-wider">
           <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />

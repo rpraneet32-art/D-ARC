@@ -3,12 +3,36 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About D-Arc | Architectural Interiors in Kannur",
   description: "Learn about D-Arc Architectural Interiors, founded by Afzal Ali. We are Kannur's premier firm for award-winning architecture and interior design.",
+  alternates: {
+    canonical: "/company",
+  },
 };
 
+import { Breadcrumb } from "@/components/shared/Breadcrumb";
+
 export default function CompanyPage() {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Architect",
+    "name": "D-Arc Architectural Interiors",
+    "image": "https://www.darcinterior.com/og-image.jpg",
+    "url": "https://www.darcinterior.com/company",
+    "telephone": "+917907009322",
+    "founder": {
+      "@type": "Person",
+      "name": "Afzal Ali"
+    },
+    "foundingDate": "2014"
+  };
+
   return (
     <main className="min-h-screen pt-24 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className="container mx-auto px-6">
+        <Breadcrumb />
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-serif text-brand-black mb-6">About D-Arc</h1>
           <div className="w-20 h-1 bg-brand-gold mx-auto mb-8"></div>

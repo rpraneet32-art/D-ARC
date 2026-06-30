@@ -6,10 +6,13 @@ export const metadata: Metadata = {
   description: "Visit our sprawling Home Experience Centre in Mattannur, Kannur. Explore our exclusive Sofa Studio featuring customized, premium furniture.",
 };
 
+import { Breadcrumb } from "@/components/shared/Breadcrumb";
+
 export default function ExperienceCentrePage() {
   return (
     <main className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-6">
+        <Breadcrumb />
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-serif text-brand-black mb-6">Home Experience Centre</h1>
           <div className="w-20 h-1 bg-brand-gold mx-auto mb-8"></div>

@@ -13,20 +13,37 @@ const megaMenus = {
     { title: 'Architectural Design', href: '/services/architecture', desc: 'From residential homes to commercial buildings.' },
     { title: 'Interior Design', href: '/services/interior-design', desc: 'Stunning, functional spaces that reflect your style.' },
     { title: 'Construction', href: '/services/construction', desc: 'Meticulous attention to detail and high-quality materials.' },
+    { title: 'Turnkey Projects', href: '/services/turnkey-projects', desc: 'Comprehensive solutions from concept to completion.' },
+    { title: 'Landscape Design', href: '/services/landscape', desc: 'Beautiful outdoor living spaces.' },
     { title: 'Modular Kitchen', href: '/services/modular-kitchen', desc: 'Style + functionality for the heart of your home.' },
     { title: 'Home Renovation', href: '/services/home-renovation', desc: 'Transforming existing spaces into dream homes.' },
-    { title: 'Turnkey Projects', href: '/services/turnkey-projects', desc: 'Comprehensive solutions from concept to completion.' }
+    { title: 'Structural Engineering', href: '/services/structural', desc: 'Solid foundations for ambitious designs.' }
   ],
   expertise: [
-    { title: 'Residential', href: '/expertise/residential-architecture', desc: 'Custom home designs tailored to your lifestyle.' },
-    { title: 'Commercial', href: '/expertise/commercial-architecture', desc: 'Innovative workspaces and retail environments.' },
+    { title: 'Residential Architecture', href: '/expertise/residential-architecture', desc: 'Custom home designs tailored to your lifestyle.' },
+    { title: 'Commercial Architecture', href: '/expertise/commercial-architecture', desc: 'Innovative workspaces and retail environments.' },
     { title: 'Luxury Villas', href: '/expertise/luxury-villas', desc: 'High-end bespoke residences with premium finishes.' },
-    { title: 'Sustainable Design', href: '/expertise/sustainable-design', desc: 'Eco-friendly architecture for a better tomorrow.' }
+    { title: 'Modern Homes', href: '/expertise/modern-homes', desc: 'Contemporary designs for modern living.' },
+    { title: 'Space Planning', href: '/expertise/space-planning', desc: 'Optimizing spatial flow and utility.' },
+    { title: 'Structural Design', href: '/expertise/structural-design', desc: 'Engineering safe and striking structures.' },
+    { title: 'Project Consultation', href: '/expertise/consultation', desc: 'Expert guidance for your next big project.' }
+  ],
+  portfolio: [
+    { title: 'Residential', href: '/portfolio?category=residential', desc: 'Bespoke homes and luxury villas.' },
+    { title: 'Commercial', href: '/portfolio?category=commercial', desc: 'Offices, retail, and hospitality spaces.' },
+    { title: 'Interior', href: '/portfolio?category=interior', desc: 'Stunning interior transformations.' },
+    { title: 'Architecture', href: '/portfolio?category=architecture', desc: 'Ground-up architectural masterpieces.' },
+    { title: 'Construction', href: '/portfolio?category=construction', desc: 'High-quality builds built to last.' },
+    { title: 'Turnkey', href: '/portfolio?category=turnkey', desc: 'End-to-end project execution.' }
   ],
   company: [
-    { title: 'About D-Arc', href: '/company', desc: 'Our legacy and vision.' },
+    { title: 'About Us', href: '/company', desc: 'Our legacy and vision.' },
     { title: 'Experience Centre', href: '/company/experience-centre', desc: 'Visit our Mattannur studio.' },
-    { title: 'Careers', href: '/company/careers', desc: 'Join our growing team.' },
+    { title: 'Our Team', href: '/company/team', desc: 'Meet the visionaries behind D-Arc.' },
+  ],
+  blog: [
+    { title: 'Architecture Blog', href: '/blog?category=architecture', desc: 'Insights and trends in architecture.' },
+    { title: 'Interior Design Blog', href: '/blog?category=interior-design', desc: 'Tips and inspiration for your interiors.' }
   ]
 };
 
@@ -76,10 +93,10 @@ export function Header() {
               </Link>
             </li>
 
-            {/* Portfolio Tab (No Dropdown) */}
+            {/* Portfolio Tab */}
             <li className="h-full flex items-center relative px-4" onMouseEnter={() => handleMouseEnter('portfolio')}>
-              <Link href="/portfolio" className={`text-sm font-medium transition-colors ${pathname.startsWith('/portfolio') ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
-                Portfolio
+              <Link href="/portfolio" className={`text-sm font-medium flex items-center transition-colors ${activeMenu === 'portfolio' || pathname.startsWith('/portfolio') ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
+                Portfolio <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'portfolio' ? 'rotate-180' : ''}`} />
               </Link>
             </li>
 
@@ -89,11 +106,18 @@ export function Header() {
                 Company <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'company' ? 'rotate-180' : ''}`} />
               </Link>
             </li>
+
+            {/* Blog Tab */}
+            <li className="h-full flex items-center relative px-4" onMouseEnter={() => handleMouseEnter('blog')}>
+              <Link href="/blog" className={`text-sm font-medium flex items-center transition-colors ${activeMenu === 'blog' || pathname.startsWith('/blog') ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
+                Blog <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'blog' ? 'rotate-180' : ''}`} />
+              </Link>
+            </li>
           </ul>
 
           {/* Mega Menu Dropdown */}
           <AnimatePresence>
-            {activeMenu && activeMenu !== 'portfolio' && (
+            {activeMenu && (
               <motion.div
                 initial={{ opacity: 0, y: 10, rotateX: -5 }}
                 animate={{ opacity: 1, y: 0, rotateX: 0 }}

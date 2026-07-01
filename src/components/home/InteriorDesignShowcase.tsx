@@ -55,7 +55,7 @@ export function InteriorDesignShowcase() {
           <p className="text-lg text-brand-grey mb-10 leading-relaxed">
             Every interior we design is a deeply personal narrative. We source premium materials, craft bespoke furniture in our Sofa Studio, and orchestrate light to transform empty rooms into breathtaking experiences.
           </p>
-          <Link href="/services/interior-design" className="inline-flex items-center text-white font-semibold uppercase tracking-wider text-sm hover:text-brand-gold transition-colors group">
+          <Link href="/services/interior-design-in-kannur" className="inline-flex items-center text-white font-semibold uppercase tracking-wider text-sm hover:text-brand-gold transition-colors group">
             Explore Interiors
             <svg className="w-5 h-5 ml-3 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

@@ -3,10 +3,13 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About D-Arc | Architectural Interiors in Kannur",
   description: "Learn about D-Arc Architectural Interiors, founded by Afzal Ali. We are Kannur's premier firm for award-winning architecture and interior design.",
+  keywords: ["Architectural Interiors Kannur", "Afzal Ali Architect", "Best Interior Design Firm Kerala", "Luxury Architecture Studio Kannur"],
   alternates: {
     canonical: "/company",
   },
 };
+
+import Link from "next/link";
 
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
@@ -55,7 +58,7 @@ export default function CompanyPage() {
               Founded in 2014 by Afzal Ali in Mattannur, Kannur, D-Arc Architectural Interiors started with a simple vision: to elevate the standard of living and working environments through thoughtful, innovative design.
             </p>
             <p className="text-brand-grey mb-6 leading-relaxed">
-              Over the years, we have grown from a passionate local studio into an award-winning firm recognized for our meticulous attention to detail and commitment to excellence. Our portfolio spans luxurious residential villas, dynamic commercial workspaces, and bespoke interior renovations.
+              Over the years, we have grown from a passionate local studio into an award-winning firm recognized for our meticulous attention to detail and commitment to excellence. Our <Link href="/portfolio" className="text-brand-gold hover:underline">portfolio</Link> spans <Link href="/expertise/luxury-villas-in-kannur" className="text-brand-gold hover:underline">luxurious residential villas</Link>, dynamic <Link href="/expertise/commercial-architecture-in-kannur" className="text-brand-gold hover:underline">commercial workspaces</Link>, and bespoke interior renovations.
             </p>
             <div className="flex gap-4 mt-8">
               <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm text-center flex-1">

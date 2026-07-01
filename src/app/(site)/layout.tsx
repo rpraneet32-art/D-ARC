@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.darcinterior.com'),
   title: "D-Arc Architectural Interiors | Architects in Kannur",
   description: "D-Arc Architectural Interiors is the most premium architecture and interior design firm in Kannur, Kerala. Discover our Home Experience Center.",
+  keywords: ["Interior Designers in Kannur", "Best Architects in Kannur", "Luxury Home Interiors Kerala", "Budget Friendly Builders Malabar"],
   alternates: {
     canonical: "/",
   },

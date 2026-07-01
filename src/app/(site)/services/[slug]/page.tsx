@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${service.title} | D-Arc Architectural Interiors`,
     description: service.shortDescription,
+    keywords: [`${service.title} Kannur`, `Best ${service.title} Kerala`, "D-Arc Services", "Interior Architecture"],
     alternates: {
       canonical: `/services/${service.slug?.current || service.slug}`,
     },
@@ -75,9 +76,12 @@ export default async function ServicePage({ params }: Props) {
           
           <div className="mt-12 pt-8 border-t border-gray-100">
             <h3 className="text-2xl font-serif text-brand-black mb-4">Ready to start your project?</h3>
-            <Link href="/contact" className="inline-block bg-brand-black text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-brand-gold transition-colors">
+            <Link href="/contact-us" className="inline-block bg-brand-black text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-brand-gold transition-colors">
               Request a Consultation
             </Link>
+            <p className="mt-6 text-sm text-brand-grey">
+              View our past work in our <Link href="/portfolio" className="text-brand-gold hover:underline">Portfolio</Link> or learn more <Link href="/company" className="text-brand-gold hover:underline">About Us</Link>.
+            </p>
           </div>
         </div>
       </div>

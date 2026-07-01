@@ -66,7 +66,7 @@ export default function Home() {
             <span className="text-brand-gold">Interior Perfection</span>
           </h1>
           <p className="text-lg md:text-xl text-brand-grey mb-10 max-w-2xl mx-auto">
-            The leading architecture and interior design firm in Kannur. Transforming spaces into exceptional environments that inspire and enrich lives.
+            The leading <Link href="/services/architecture-in-kannur" className="text-brand-gold hover:underline">architecture</Link> and <Link href="/services/interior-design-in-kannur" className="text-brand-gold hover:underline">interior design</Link> firm in Kannur. Transforming spaces into exceptional environments that inspire and enrich lives.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/portfolio" className="px-8 py-4 bg-brand-gold text-brand-black font-bold uppercase tracking-wide hover:bg-white transition-colors">
@@ -90,7 +90,7 @@ export default function Home() {
               </h2>
               <div className="space-y-6 text-brand-grey">
                 <p>
-                  Founded in Mattannur, Kannur, in 2014 by Afzal Ali, D-Arc has been at the forefront of transforming living spaces. With a deep-rooted passion for design and construction, we&apos;ve evolved into a comprehensive design and build firm.
+                  Founded in Mattannur, Kannur, in 2014 by Afzal Ali, D-Arc has been at the forefront of transforming living spaces. With a deep-rooted passion for design and <Link href="/services/construction-in-kannur" className="text-brand-gold hover:underline">construction</Link>, we&apos;ve evolved into a comprehensive design and build firm.
                 </p>
                 <p>
                   Joining the team in 2023, Shuhood Bin Haris brought a wealth of experience in custom furniture and interior design, further enriching our offerings. Today, D-Arc stands as a symbol of innovation, delivering exceptional projects that cater to diverse tastes and lifestyles.

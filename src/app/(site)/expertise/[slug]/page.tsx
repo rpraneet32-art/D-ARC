@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${item.title} | D-Arc Architectural Interiors`,
     description: item.shortDescription,
+    keywords: [`${item.title} Kannur`, `Best ${item.title} Kerala`, "D-Arc Expertise", "Architecture Specialists"],
     alternates: {
       canonical: `/expertise/${item.slug?.current || item.slug}`,
     },
@@ -75,9 +76,12 @@ export default async function ExpertiseDetailPage({ params }: Props) {
           
           <div className="mt-12 pt-8 border-t border-gray-100">
             <h3 className="text-2xl font-serif text-brand-black mb-4">Discuss your specific requirements</h3>
-            <Link href="/contact" className="inline-block bg-brand-black text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-brand-gold transition-colors">
+            <Link href="/contact-us" className="inline-block bg-brand-black text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-brand-gold transition-colors">
               Contact Our Experts
             </Link>
+            <p className="mt-6 text-sm text-brand-grey">
+              Explore our <Link href="/services" className="text-brand-gold hover:underline">Services</Link> or view our <Link href="/portfolio" className="text-brand-gold hover:underline">Portfolio</Link> to see our expertise in action.
+            </p>
           </div>
         </div>
       </div>

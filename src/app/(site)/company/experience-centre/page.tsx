@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Home Experience Centre & Sofa Studio | D-Arc",
   description: "Visit our sprawling Home Experience Centre in Mattannur, Kannur. Explore our exclusive Sofa Studio featuring customized, premium furniture.",
+  keywords: ["Home Experience Centre Kannur", "Custom Sofa Studio Kerala", "Interior Design Mockups Kannur", "Premium Furniture Showroom"],
 };
 
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
@@ -28,7 +29,7 @@ export default function ExperienceCentrePage() {
             <div className="md:w-1/2 p-12 lg:p-16 flex flex-col justify-center">
               <h2 className="text-3xl font-serif text-brand-black mb-6">Touch, Feel, and Experience</h2>
               <p className="text-brand-grey mb-6 leading-relaxed">
-                Our Home Experience Centre allows you to physically interact with various materials, finishes, and design concepts before making a decision. Walk through fully realized room setups, from modern modular kitchens to luxurious bedrooms.
+                Our Home Experience Centre allows you to physically interact with various materials, finishes, and design concepts before making a decision. Walk through fully realized room setups, from modern <Link href="/services/modular-kitchen-in-kannur" className="text-brand-gold hover:underline">modular kitchens</Link> to luxurious <Link href="/expertise/residential-architecture-in-kannur" className="text-brand-gold hover:underline">bedrooms</Link>.
               </p>
               <ul className="space-y-4 mb-8 text-brand-black font-medium">
                 <li className="flex items-start">

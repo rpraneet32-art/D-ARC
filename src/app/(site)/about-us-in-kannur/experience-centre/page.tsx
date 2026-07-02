@@ -29,7 +29,7 @@ export default function ExperienceCentrePage() {
             <div className="md:w-1/2 p-12 lg:p-16 flex flex-col justify-center">
               <h2 className="text-3xl font-serif text-brand-black mb-6">Touch, Feel, and Experience</h2>
               <p className="text-brand-grey mb-6 leading-relaxed">
-                Our Home Experience Centre allows you to physically interact with various materials, finishes, and design concepts before making a decision. Walk through fully realized room setups, from modern <Link href="/services/modular-kitchen-in-kannur" className="text-brand-gold hover:underline">modular kitchens</Link> to luxurious <Link href="/expertise/residential-architecture-in-kannur" className="text-brand-gold hover:underline">bedrooms</Link>.
+                Our Home Experience Centre allows you to physically interact with various materials, finishes, and design concepts before making a decision. Walk through fully realized room setups, from modern <Link href="/services-in-kannur/modular-kitchen-in-kannur" className="text-brand-gold hover:underline">modular kitchens</Link> to luxurious <Link href="/expertise-in-kannur/residential-architecture-in-kannur" className="text-brand-gold hover:underline">bedrooms</Link>.
               </p>
               <ul className="space-y-4 mb-8 text-brand-black font-medium">
                 <li className="flex items-start">

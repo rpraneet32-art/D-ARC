@@ -137,7 +137,7 @@ export default function ContactUsPage() {
                 <p><strong className="text-brand-black">Head Office:</strong> Therur, Kannur, Kerala, India 670795</p>
                 <p><strong className="text-brand-black">Phone:</strong> +91 79070 09322</p>
                 <p><strong className="text-brand-black">Email:</strong> info@darc.com</p>
-                <p><strong className="text-brand-black">Visit Us:</strong> Explore our <Link href="/company/experience-centre" className="text-brand-gold hover:underline">Home Experience Centre</Link></p>
+                <p><strong className="text-brand-black">Visit Us:</strong> Explore our <Link href="/about-us-in-kannur/experience-centre" className="text-brand-gold hover:underline">Home Experience Centre</Link></p>
                 <p><strong className="text-brand-black">Business Hours:</strong> Monday - Saturday, 9:00 AM - 6:00 PM</p>
               </div>
             </div>

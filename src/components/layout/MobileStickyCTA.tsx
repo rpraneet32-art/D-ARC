@@ -19,7 +19,7 @@ export function MobileStickyCTA() {
         WhatsApp
       </a>
       <Link 
-        href="/contact-us" 
+        href="/contact-us-in-kannur" 
         className="flex-1 flex items-center justify-center bg-brand-gold text-brand-black px-4 py-3 rounded-sm text-sm font-bold hover:bg-white transition-colors"
       >
         <FileText className="w-4 h-4 mr-2" />

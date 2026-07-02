@@ -69,7 +69,7 @@ export default async function LocationPage({ params }: Props) {
               <p className="text-brand-grey mb-6">
                 Our award-winning team of <strong className="text-brand-black font-medium">interior designers in {location.name}</strong> specializes in creating stunning, highly functional spaces. We integrate local cultural elements with modern design trends.
               </p>
-              <Link href="/services/interior-design-in-kannur" className="text-brand-gold font-semibold uppercase text-sm tracking-wider hover:underline flex items-center">
+              <Link href="/services-in-kannur/interior-design-in-kannur" className="text-brand-gold font-semibold uppercase text-sm tracking-wider hover:underline flex items-center">
                 Explore Interior Design
                 <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -83,7 +83,7 @@ export default async function LocationPage({ params }: Props) {
               <p className="text-brand-grey mb-6">
                 As a trusted <strong className="text-brand-black font-medium">construction company in {location.name}</strong>, we offer turnkey solutions. From laying the foundation to the final interior touches, our builders ensure unparalleled quality.
               </p>
-              <Link href="/services/turnkey-projects-in-kannur" className="text-brand-gold font-semibold uppercase text-sm tracking-wider hover:underline flex items-center">
+              <Link href="/services-in-kannur/turnkey-projects-in-kannur" className="text-brand-gold font-semibold uppercase text-sm tracking-wider hover:underline flex items-center">
                 View Turnkey Solutions
                 <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -98,10 +98,10 @@ export default async function LocationPage({ params }: Props) {
               Ready to build your dream home or commercial space? Partner with the best <strong className="text-brand-black font-medium">builders in {location.name}</strong>.
             </p>
             <div className="flex gap-4">
-              <Link href="/contact-us" className="inline-block bg-brand-black text-brand-gold px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-brand-gold hover:text-brand-black transition-colors">
+              <Link href="/contact-us-in-kannur" className="inline-block bg-brand-black text-brand-gold px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-brand-gold hover:text-brand-black transition-colors">
                 Contact Us
               </Link>
-              <Link href="/portfolio" className="inline-block border-2 border-brand-black text-brand-black px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-brand-black hover:text-white transition-colors">
+              <Link href="/portfolio-in-kannur" className="inline-block border-2 border-brand-black text-brand-black px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-brand-black hover:text-white transition-colors">
                 Our Portfolio
               </Link>
             </div>

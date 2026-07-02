@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "Get in touch with D-Arc Architectural Interiors. Book a consultation or visit our Home Experience Centre in Kannur.",
   keywords: ["Contact Architect Kannur", "Interior Design Estimate Kerala", "D-Arc Contact Number", "Home Construction Consultation"],
   alternates: {
-    canonical: "/contact-us",
+    canonical: "/contact-us-in-kannur",
   },
 };
 

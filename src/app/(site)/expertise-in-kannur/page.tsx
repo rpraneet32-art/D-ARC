@@ -6,7 +6,7 @@ export const metadata = {
   description: "Discover our specialized expertise in residential architecture, commercial spaces, luxury villas, and sustainable design.",
   keywords: ["Luxury Villas Architects", "Commercial Architecture Kerala", "Residential Architects Kannur", "Sustainable Design Consultants"],
   alternates: {
-    canonical: "/expertise",
+    canonical: "/expertise-in-kannur",
   },
 };
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
@@ -33,7 +33,7 @@ export default function ExpertisePage() {
         <Breadcrumb />
         <h1 className="text-4xl md:text-5xl font-serif text-brand-gold mb-6">Our Expertise</h1>
         <p className="text-brand-grey max-w-2xl mb-12 text-lg">
-          With years of experience across diverse <Link href="/services/architecture-in-kannur" className="text-brand-gold hover:underline">architectural</Link> typologies, our specialized expertise ensures that your specific <Link href="/contact-us" className="text-brand-gold hover:underline">project requirements</Link> are met with unparalleled precision.
+          With years of experience across diverse <Link href="/services-in-kannur/architecture-in-kannur" className="text-brand-gold hover:underline">architectural</Link> typologies, our specialized expertise ensures that your specific <Link href="/contact-us-in-kannur" className="text-brand-gold hover:underline">project requirements</Link> are met with unparalleled precision.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">

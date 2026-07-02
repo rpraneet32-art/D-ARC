@@ -15,17 +15,17 @@ const steps = [
   {
     title: "1. Land & Foundation",
     description: "Our construction division handles everything from soil testing to laying robust foundations. We ensure absolute structural integrity from day one.",
-    image: "/assets/projects/WhatsApp Image 2026-06-26 at 15.18.52 (1).jpeg"
+    image: "/assets/projects/best-construction-company-kannur.jpeg"
   },
   {
     title: "2. Precision Construction",
     description: "Utilizing top-tier materials and advanced engineering practices, we construct the superstructure with an uncompromising eye for detail.",
-    image: "/assets/projects/WhatsApp Image 2026-06-26 at 15.18.49.jpeg"
+    image: "/assets/projects/modern-residential-architects-kannur.jpeg"
   },
   {
     title: "3. Turnkey Handover",
     description: "From plumbing to the final coat of paint and interior furnishing, we deliver a completely finished, move-in-ready home.",
-    image: "/assets/projects/WhatsApp Image 2026-06-26 at 15.18.47.jpeg"
+    image: "/assets/projects/luxury-interior-design-kannur.jpeg"
   }
 ];
 
@@ -68,7 +68,7 @@ export function ConstructionTurnkey() {
               <p className="text-lg text-brand-grey mb-10 leading-relaxed max-w-lg">
                 Why juggle multiple contractors? D-Arc provides comprehensive turnkey solutions. We take full accountability for your project, from the initial architectural draft to handing over the keys. 
               </p>
-              <Link href="/services/turnkey-projects-in-kannur" className="px-8 py-4 bg-brand-black text-brand-gold font-bold uppercase tracking-wide hover:bg-brand-gold hover:text-brand-black transition-colors inline-block">
+              <Link href="/services-in-kannur/turnkey-projects-in-kannur" className="px-8 py-4 bg-brand-black text-brand-gold font-bold uppercase tracking-wide hover:bg-brand-gold hover:text-brand-black transition-colors inline-block">
                 View Turnkey Solutions
               </Link>
             </div>

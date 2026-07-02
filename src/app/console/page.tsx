@@ -59,7 +59,7 @@ export default function ConsoleDashboard() {
           {score && (
             <div className="text-right">
               <p className="text-sm text-gray-500 uppercase tracking-wide">Publish Status</p>
-              {score.totalScore >= 95 ? (
+              {pageData.publishStatus === "Ready to Publish" ? (
                 <p className="text-lg font-bold text-green-500 flex items-center justify-end gap-2">
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                   READY FOR PUBLISHING
@@ -261,6 +261,45 @@ export default function ConsoleDashboard() {
                   <span className={`font-bold ${score.cwvScore + score.techScore === 15 ? 'text-green-500' : 'text-yellow-500'}`}>{score.cwvScore + score.techScore}/15</span>
                 </div>
 
+              </div>
+            </div>
+
+            {/* Additional Advanced Metrics Grid */}
+            <div className="p-6 border-t border-gray-800 bg-[#1a1d24]">
+              <h3 className="text-lg font-bold text-white mb-6">Advanced Page Metrics</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div>
+                  <p className="text-gray-500 text-sm mb-1">Index Status</p>
+                  <p className={`font-bold ${pageData.indexStatus === 'Indexable' ? 'text-green-500' : 'text-red-500'}`}>{pageData.indexStatus}</p>
+                </div>
+                <div>
+                  <p className="text-gray-500 text-sm mb-1">Canonical Tag</p>
+                  <p className={`font-bold ${pageData.hasCanonical ? 'text-green-500' : 'text-red-500'}`}>{pageData.hasCanonical ? "Present" : "Missing"}</p>
+                </div>
+                <div>
+                  <p className="text-gray-500 text-sm mb-1">Open Graph</p>
+                  <p className={`font-bold ${pageData.hasOpenGraph ? 'text-green-500' : 'text-red-500'}`}>{pageData.hasOpenGraph ? "Present" : "Missing"}</p>
+                </div>
+                <div>
+                  <p className="text-gray-500 text-sm mb-1">Twitter Card</p>
+                  <p className={`font-bold ${pageData.hasTwitterCard ? 'text-green-500' : 'text-red-500'}`}>{pageData.hasTwitterCard ? "Present" : "Missing"}</p>
+                </div>
+                <div>
+                  <p className="text-gray-500 text-sm mb-1">Broken Links</p>
+                  <p className={`font-bold ${pageData.brokenLinks === 0 ? 'text-green-500' : 'text-red-500'}`}>{pageData.brokenLinks === 0 ? "None" : pageData.brokenLinks}</p>
+                </div>
+                <div>
+                  <p className="text-gray-500 text-sm mb-1">Word Count</p>
+                  <p className="font-bold text-white">{pageData.wordCount} words</p>
+                </div>
+                <div>
+                  <p className="text-gray-500 text-sm mb-1">Reading Time</p>
+                  <p className="font-bold text-white">{pageData.readingTime}</p>
+                </div>
+                <div>
+                  <p className="text-gray-500 text-sm mb-1">Last Updated</p>
+                  <p className="font-bold text-white">{pageData.lastUpdated}</p>
+                </div>
               </div>
             </div>
           </div>

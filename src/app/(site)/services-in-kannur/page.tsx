@@ -6,7 +6,7 @@ export const metadata = {
   description: "Explore our premium architecture, interior design, construction, and turnkey project services in Kannur.",
   keywords: ["Architecture Services Kannur", "Interior Design Kerala", "Turnkey Construction Contractors", "Modular Kitchen Designers"],
   alternates: {
-    canonical: "/services",
+    canonical: "/services-in-kannur",
   },
 };
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
@@ -20,7 +20,7 @@ export default function ServicesPage() {
         <Breadcrumb />
         <h1 className="text-4xl md:text-5xl font-serif text-brand-gold mb-6">Our Services</h1>
         <p className="text-brand-grey max-w-2xl mb-12 text-lg">
-          From conceptual design to final construction, D-Arc offers a comprehensive suite of <Link href="/expertise/residential-architecture-in-kannur" className="text-brand-gold hover:underline">architectural</Link> and <Link href="/services/interior-design-in-kannur" className="text-brand-gold hover:underline">interior design</Link> services tailored to your exact needs.
+          From conceptual design to final construction, D-Arc offers a comprehensive suite of <Link href="/expertise-in-kannur/residential-architecture-in-kannur" className="text-brand-gold hover:underline">architectural</Link> and <Link href="/services-in-kannur/interior-design-in-kannur" className="text-brand-gold hover:underline">interior design</Link> services tailored to your exact needs.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">

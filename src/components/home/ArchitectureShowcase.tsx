@@ -56,7 +56,7 @@ export function ArchitectureShowcase() {
             <p className="text-lg text-brand-grey mb-10 leading-relaxed">
               Our architectural approach blends modern engineering precision with timeless aesthetics. We create structures that stand as landmarks, from luxury residential villas to cutting-edge commercial spaces. Every line drawn is purposeful.
             </p>
-            <Link href="/services/architecture-in-kannur" className="inline-flex items-center text-brand-black font-semibold uppercase tracking-wider text-sm hover:text-brand-gold transition-colors group">
+            <Link href="/services-in-kannur/architecture-in-kannur" className="inline-flex items-center text-brand-black font-semibold uppercase tracking-wider text-sm hover:text-brand-gold transition-colors group">
               View Architecture Services
               <svg className="w-5 h-5 ml-3 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -67,7 +67,7 @@ export function ArchitectureShowcase() {
           <div className="order-1 lg:order-2 relative h-[700px] w-full overflow-hidden rounded-sm shadow-xl">
             <Image 
               ref={imageRef}
-              src="/assets/projects/WhatsApp Image 2026-06-26 at 15.18.52 (1).jpeg"
+              src="/assets/projects/best-construction-company-kannur.jpeg"
               alt="D-Arc Premium Architecture Showcase"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

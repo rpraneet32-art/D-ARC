@@ -42,6 +42,14 @@ export interface SeoPageData {
   hasSchema: boolean;
   hasFaq: boolean;
   hasEeatSignals: boolean;
+  readingTime: string;
+  hasCanonical: boolean;
+  hasOpenGraph: boolean;
+  hasTwitterCard: boolean;
+  indexStatus: string;
+  brokenLinks: number;
+  publishStatus: string;
+  lastUpdated: string;
 }
 
 export function calculateSeoScore(data: SeoPageData): SeoMetrics {

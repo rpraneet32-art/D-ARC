@@ -1,6 +1,15 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FadeIn } from '@/components/animations/FadeIn';
+
+export const metadata: Metadata = {
+  title: "Architects in Kannur | Interior Designers in Kannur | D-Arc",
+  description: "Looking for top architects in Kannur? D-Arc provides expert interior designers in Kannur and premium construction solutions. Contact us for a free estimate!",
+  alternates: {
+    canonical: "/"
+  }
+};
 
 // Import all the newly created homepage sections
 import { ArchitectureShowcase } from '@/components/home/ArchitectureShowcase';
@@ -52,7 +61,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image 
             src="/assets/projects/best-construction-company-kannur.jpeg" 
-            alt="D-Arc Home Experience Centre Exterior" 
+            alt="Luxury villa designed by architects in Kannur" 
             fill 
             sizes="100vw"
             className="object-cover opacity-60"
@@ -61,9 +70,9 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-brand-black/40 to-brand-black/90" />
         </div>
         <FadeIn delay={0.2} direction="up" className="relative z-10 text-center max-w-4xl px-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-brand-white mb-6 leading-tight">
-            Architectural Brilliance,<br />
-            <span className="text-brand-gold">Interior Perfection</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-brand-white mb-6 leading-tight">
+            Architects in Kannur <br />
+            <span className="text-brand-gold">Creating Luxury Homes</span>
           </h1>
           <p className="text-lg md:text-xl text-brand-grey mb-10 max-w-2xl mx-auto">
             The leading <Link href="/services-in-kannur/architecture-in-kannur" className="text-brand-gold hover:underline">architecture</Link> and <Link href="/services-in-kannur/interior-design-in-kannur" className="text-brand-gold hover:underline">interior design</Link> firm in Kannur. Transforming spaces into exceptional environments that inspire and enrich lives.
@@ -85,8 +94,8 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="left">
               <h2 className="text-3xl md:text-5xl font-serif font-bold text-brand-white mb-8">
-                Your Vision, <br />
-                <span className="text-brand-gold">Our Masterpiece</span>
+                Best Residential <br />
+                <span className="text-brand-gold">Architects in Kannur</span>
               </h2>
               <div className="space-y-6 text-brand-grey">
                 <p>

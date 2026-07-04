@@ -46,12 +46,12 @@ export function InteriorDesignShowcase() {
       {/* Intro Text */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="max-w-3xl">
-          <h2 className="text-sm font-semibold text-brand-gold uppercase tracking-widest mb-4">
+          <div className="text-sm font-semibold text-brand-gold uppercase tracking-widest mb-4">
             02 // Interior Design
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 leading-tight">
+            Interior Designers in Kannur<br /> Curating Extraordinary Spaces.
           </h2>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 leading-tight">
-            Curated Spaces for<br /> Extraordinary Living.
-          </h3>
           <p className="text-lg text-brand-grey mb-10 leading-relaxed">
             Every interior we design is a deeply personal narrative. We source premium materials, craft bespoke furniture in our Sofa Studio, and orchestrate light to transform empty rooms into breathtaking experiences.
           </p>

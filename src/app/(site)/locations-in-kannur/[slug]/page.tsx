@@ -23,9 +23,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // 1 Primary Keyword, 2 Secondary
   // Title: 50-60 chars | Desc: 150-160 chars
-  return {
-    title: `Architects in ${location.name} | Interior Designers | D-Arc`,
-    description: `Looking for top architects in ${location.name}? D-Arc provides premium interior design and construction company services near ${location.landmarks}. Contact us!`,
+    let desc = `Looking for top architects in ${location.name}? D-Arc provides premium interior design and turnkey construction services near ${location.landmarks}.`;
+    if (desc.length < 150) desc += " Contact our expert team today to begin planning your dream home.";
+    if (desc.length < 150) desc += " Let us build your vision.";
+    if (desc.length > 160) desc = desc.substring(0, 157) + "...";
+
+    return {
+      title: `Architects in ${location.name} | Interior Designers | D-Arc`,
+      description: desc,
     keywords: [
       `Architects in ${location.name}`,
       `Interior Designers in ${location.name}`,
@@ -61,7 +66,7 @@ export default async function LocationPage({ params }: Props) {
             <div className="w-20 h-1 bg-brand-gold mb-8"></div>
             
             <p className="text-lg md:text-xl text-brand-grey leading-relaxed mb-6">
-              D-Arc Architectural Interiors is proud to be recognized as the premier choice for <strong className="text-brand-black font-medium">architects in {location.name}</strong>. {location.description} Our diverse portfolio and commitment to uncompromising quality have established us as leaders in the region, particularly near key landmarks like {location.landmarks}. For over a decade, we have been transforming visions into reality by designing bespoke luxury homes, modern residential villas, and dynamic commercial workspaces that reflect the unique lifestyle and aspirations of our clients in the {location.name} region.
+              D-Arc Architectural Interiors is proud to be recognized as the premier choice for <strong className="text-brand-black font-medium">architects serving {location.name}</strong>. {location.description} Our diverse portfolio and commitment to uncompromising quality have established us as leaders in the region, particularly near key landmarks like {location.landmarks}. For over a decade, we have been transforming visions into reality by designing bespoke luxury homes, modern residential villas, and dynamic commercial workspaces that reflect the unique lifestyle and aspirations of our clients in the {location.name} region.
             </p>
             <p className="text-brand-grey leading-relaxed mb-6">
               Whether you are looking to build a contemporary masterpiece from the ground up or require meticulous renovations to an existing heritage property, our team possesses the profound local knowledge and technical expertise required to navigate the complexities of construction in Kerala. From navigating local building codes and zoning laws to optimizing floor plans for the tropical climate and monsoon seasons, being the top <Link href="/services-in-kannur/architecture-in-kannur" className="text-brand-gold hover:underline">residential architects in Kannur</Link> means we leave nothing to chance. We believe that true architectural excellence is born at the intersection of aesthetic brilliance and uncompromising functionality.
@@ -112,7 +117,7 @@ export default async function LocationPage({ params }: Props) {
           <section className="mb-16 bg-brand-black text-white p-8 md:p-12 rounded-2xl shadow-xl">
             <h2 className="text-3xl font-serif mb-6 text-brand-gold">Our Comprehensive Service Offerings in {location.name}</h2>
             <p className="text-gray-300 leading-relaxed mb-8">
-              To truly serve as the best architects in {location.name}, we have developed a holistic suite of services designed to handle projects of immense scale and complexity. 
+              To truly serve as the best architecture firm for {location.name}, we have developed a holistic suite of services designed to handle projects of immense scale and complexity. 
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -145,7 +150,7 @@ export default async function LocationPage({ params }: Props) {
 
           {/* Section 5: Why Choose Us (H2 + H3) */}
           <section className="mb-16">
-            <h2 className="text-3xl font-serif text-brand-black mb-6">Why D-Arc is the Top Choice for Architects in {location.name}</h2>
+            <h2 className="text-3xl font-serif text-brand-black mb-6">Why D-Arc is the Top Choice for Architecture in {location.name}</h2>
             <p className="text-brand-grey leading-relaxed mb-8">
               In a crowded market, discerning clients consistently choose D-Arc for our unmatched dedication to excellence, transparency, and innovation. Here is why we are the preferred interior designers and construction company in the region.
             </p>
@@ -185,7 +190,7 @@ export default async function LocationPage({ params }: Props) {
           <section className="mb-16">
             <h2 className="text-3xl font-serif text-brand-black mb-6">Our Proven 5-Step Process</h2>
             <p className="text-brand-grey leading-relaxed mb-6">
-              When you hire the leading architects in {location.name}, you expect a seamless, professional experience from day one. Our structured process ensures absolute clarity and satisfaction.
+              When you hire the leading architects serving {location.name}, you expect a seamless, professional experience from day one. Our structured process ensures absolute clarity and satisfaction.
             </p>
             <ol className="list-decimal pl-6 space-y-4 text-brand-grey text-lg">
               <li><strong>Initial Consultation & Site Visit:</strong> We meet to discuss your lifestyle needs, budget, and vision, followed by a thorough analysis of your plot in {location.name}.</li>

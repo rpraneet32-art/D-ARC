@@ -35,13 +35,13 @@ export default function ConsoleDashboard() {
   }
 
   const getScoreColor = (value: number) => {
-    if (value >= 95) return "text-green-500";
+    if (value >= 97) return "text-green-500";
     if (value >= 85) return "text-yellow-500";
     return "text-red-500";
   };
   
   const getScoreBg = (value: number) => {
-    if (value >= 95) return "bg-green-500";
+    if (value >= 97) return "bg-green-500";
     if (value >= 85) return "bg-yellow-500";
     return "bg-red-500";
   };
@@ -54,9 +54,9 @@ export default function ConsoleDashboard() {
         <div className="flex justify-between items-end">
           <div>
             <h1 className="text-3xl font-bold text-white mb-2">Dynamic SEO Analyzer</h1>
-            <p className="text-gray-400">Targeting 27-Point Master Framework. Minimum Score Required: 95/100.</p>
+            <p className="text-gray-400">Targeting 27-Point Master Framework. Minimum Score Required: 97/100.</p>
           </div>
-          {score && (
+          {score && pageData && (
             <div className="text-right">
               <p className="text-sm text-gray-500 uppercase tracking-wide">Publish Status</p>
               {pageData.publishStatus === "Ready to Publish" ? (

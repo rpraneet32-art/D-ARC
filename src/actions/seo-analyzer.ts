@@ -1,7 +1,7 @@
 "use server";
 
 import * as cheerio from "cheerio";
-import { SeoPageData } from "@/lib/seo-scorer";
+import { SeoPageData, calculateSeoScore } from "@/lib/seo-scorer";
 
 export async function analyzePage(path: string, primaryKeyword: string): Promise<SeoPageData | null> {
   try {
@@ -66,13 +66,9 @@ export async function analyzePage(path: string, primaryKeyword: string): Promise
     const indexStatus = isNoIndex ? "Blocked (NoIndex)" : "Indexable";
     
     const brokenLinks = $("a[href=''], a[href='#']").length;
-    
-    // Check if the score meets the >95 threshold requirement
-    const mockTotalScore = 98; // We will just check UI logic for publish status
-    const publishStatus = mockTotalScore >= 95 ? "Ready to Publish" : "Not Ready For Publishing";
     const lastUpdated = new Date().toISOString().split('T')[0];
-
-    return {
+    
+    const baseData = {
       url: targetUrl,
       title,
       description,
@@ -92,8 +88,16 @@ export async function analyzePage(path: string, primaryKeyword: string): Promise
       hasTwitterCard,
       indexStatus,
       brokenLinks,
-      publishStatus,
       lastUpdated
+    };
+
+    // Calculate real score to determine publish status
+    const scoreMetrics = calculateSeoScore(baseData as SeoPageData);
+    const publishStatus = scoreMetrics.totalScore >= 97 ? "Ready to Publish" : "Not Ready For Publishing";
+
+    return {
+      ...baseData,
+      publishStatus
     };
   } catch (error) {
     console.error("Error analyzing page:", error);

@@ -95,11 +95,16 @@ export function calculateSeoScore(data: SeoPageData): SeoMetrics {
     metrics.headingScore = 5;
   }
 
-  // Content Optimization (15 points) - Natural keyword freq (6-10)
-  if (data.primaryKeywordCount >= 6 && data.primaryKeywordCount <= 10) {
+  // Content Optimization (15 points) - Natural keyword freq (6-10) and Word Count (1500-3000)
+  const isKeywordOptimized = data.primaryKeywordCount >= 6 && data.primaryKeywordCount <= 12;
+  const isLengthOptimized = data.wordCount >= 1500;
+  
+  if (isKeywordOptimized && isLengthOptimized) {
     metrics.contentScore = 15;
+  } else if (isKeywordOptimized || isLengthOptimized) {
+    metrics.contentScore = 10;
   } else if (data.primaryKeywordCount > 0) {
-    metrics.contentScore = 7;
+    metrics.contentScore = 5;
   }
 
   // Image SEO (10 points) - Alt text

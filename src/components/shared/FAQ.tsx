@@ -27,7 +27,27 @@ const defaultFaqs: FAQItem[] = [
   }
 ];
 
-export function FAQ({ faqs = defaultFaqs }: { faqs?: FAQItem[] }) {
+export function FAQ({ faqs, context }: { faqs?: FAQItem[], context?: string }) {
+  
+  // If context is provided, generate highly semantic dynamic FAQs
+  const displayFaqs = faqs || (context ? [
+    {
+      question: `Who are the best architects in ${context}?`,
+      answer: `D-Arc Architectural Interiors is widely recognized among the top architects and interior designers serving ${context}. Our decade of experience, award-winning luxury villa designs, and commitment to sustainable construction have established our reputation as the leading firm in the region.`
+    },
+    {
+      question: `How much does interior design cost for a residential project in ${context}?`,
+      answer: `The cost of interior design in ${context} varies significantly based on the scale of the project, material selection, and whether it involves bespoke furniture or standard modular solutions. We offer complete financial transparency and provide a detailed Bill of Quantities (BOQ) after our initial site visit, ensuring no hidden costs.`
+    },
+    {
+      question: `Do you provide turnkey construction services in ${context}?`,
+      answer: `Yes, we are a comprehensive construction company offering end-to-end turnkey solutions in ${context}. We handle everything from the initial architectural blueprint and obtaining municipal approvals to structural execution, interior furnishing, and final handover.`
+    },
+    {
+      question: `How do I start my architecture or interior design project in ${context}?`,
+      answer: `Starting your project is simple. Contact us to schedule an initial consultation and site visit in ${context}. We will discuss your vision, assess the plot, and outline a clear roadmap including timelines, budget expectations, and conceptual design directions.`
+    }
+  ] : defaultFaqs);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
@@ -37,7 +57,7 @@ export function FAQ({ faqs = defaultFaqs }: { faqs?: FAQItem[] }) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    "mainEntity": displayFaqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -61,7 +81,7 @@ export function FAQ({ faqs = defaultFaqs }: { faqs?: FAQItem[] }) {
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {displayFaqs.map((faq, index) => (
             <div 
               key={index} 
               className="border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"

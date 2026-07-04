@@ -60,7 +60,7 @@ export default function Home() {
       <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/assets/projects/best-construction-company-kannur.jpeg" 
+            src="/assets/projects/architects-kannur-villa.webp" 
             alt="Luxury villa designed by architects in Kannur" 
             fill 
             sizes="100vw"
@@ -68,6 +68,9 @@ export default function Home() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-brand-black/40 to-brand-black/90" />
+          <div className="absolute bottom-4 left-4 z-20 text-white/50 text-xs hidden sm:block">
+            Luxury villa designed by leading architects in Kannur
+          </div>
         </div>
         <FadeIn delay={0.2} direction="up" className="relative z-10 text-center max-w-4xl px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-brand-white mb-6 leading-tight">
@@ -148,6 +151,27 @@ export default function Home() {
 
       {/* 11. Latest Blogs */}
       <LatestBlogs />
+
+      {/* 11.5 SEO Content Block */}
+      <section className="py-24 bg-brand-white text-brand-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Partner with the Best Residential Architects in Kannur</h2>
+          <div className="space-y-4 text-brand-black/80 text-lg">
+            <p>
+              When it comes to building your dream home, selecting the right team is paramount. As leading <strong>Architects in Kannur</strong>, D-Arc has a legacy of excellence in transforming spaces. Whether you are looking for custom villa designs or comprehensive turnkey solutions, our expertise as top <strong>Architects in Kannur</strong> ensures that every detail is meticulously crafted.
+            </p>
+            <p>
+              A beautiful exterior deserves a breathtaking interior. This is why our team of dedicated <strong>Interior Designers in Kannur</strong> works seamlessly with our architectural division. From spatial planning to selecting premium materials, our <strong>Interior Designers in Kannur</strong> create environments that reflect your unique personality and lifestyle. 
+            </p>
+            <p>
+              Our portfolio stands as a testament to our commitment to quality. As one of the <strong>Best Residential Architects in Kannur</strong>, we take pride in our ability to deliver projects on time and beyond expectations. If you are searching for reliable <strong>Architects in Kannur</strong> who understand local aesthetics and global standards, you have found the right partner.
+            </p>
+            <p>
+              The synergy between our <strong>Architects in Kannur</strong> and our specialized <strong>Interior Designers in Kannur</strong> allows us to offer a truly integrated approach. We invite you to visit our Home Experience Centre to see why we are considered the very <strong>Best Residential Architects in Kannur</strong>. From concept to completion, let our <strong>Architects in Kannur</strong> build the luxury home you deserve.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* 12. Contact CTA */}
       <section className="py-32 bg-brand-gold">

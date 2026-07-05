@@ -72,7 +72,7 @@ export default function Home() {
             Luxury villa designed by leading architects in Kannur
           </div>
         </div>
-        <div className="relative z-10 text-center max-w-4xl px-4 animate-in fade-in slide-in-from-bottom-4 duration-1000 fill-mode-both">
+        <div className="relative z-10 text-center max-w-4xl px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-brand-white mb-6 leading-tight">
             Architects in Kannur <br />
             <span className="text-brand-gold">Creating Luxury Homes</span>

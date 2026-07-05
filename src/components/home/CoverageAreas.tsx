@@ -29,7 +29,7 @@ export async function CoverageAreas() {
               ))}
             </div>
             <div className="mt-12">
-              <Link href="/contact-us-in-kannur" className="inline-flex items-center text-brand-black font-semibold uppercase tracking-wider text-sm hover:text-brand-gold transition-colors group">
+              <Link href="/contact-us" className="inline-flex items-center text-brand-black font-semibold uppercase tracking-wider text-sm hover:text-brand-gold transition-colors group">
                 Check Availability In Your Area
                 <svg className="w-5 h-5 ml-3 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

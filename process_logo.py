@@ -5,25 +5,24 @@ output_path = r"public\assets\logo-from-pdf-processed.png"
 
 try:
     img = Image.open(input_path).convert("RGBA")
-    # get_flattened_data is available in newer Pillow, but getdata() is still fine for now. We can just use getdata.
     datas = img.getdata()
 
     newData = []
     min_x, min_y = img.width, img.height
     max_x, max_y = 0, 0
     
-    # The background is dark gray. The logo is white and yellow.
-    # Yellow is roughly (255, 235, 0), White is (255, 255, 255)
-    # We will remove anything where R, G, and B are all less than 150.
-    
-    threshold = 120
+    # We want to remove any dark fringe. The logo is yellow (high R, high G, low B) and white (high R, G, B).
+    # If a pixel is dark (e.g. R < 150 AND G < 150 AND B < 150), or if it's explicitly a black/dark gray border.
+    # A simple way to kill the dark fringe is checking if max(R,G,B) < 180.
     
     for y in range(img.height):
         for x in range(img.width):
             item = datas[y * img.width + x]
             
-            # If it's a dark color (gray/black background), make it transparent
-            if item[0] < threshold and item[1] < threshold and item[2] < threshold:
+            # If the pixel is relatively dark (not bright white or yellow), make it transparent
+            if item[0] < 120 and item[1] < 120:
+                newData.append((0, 0, 0, 0))
+            elif max(item[0], item[1], item[2]) < 180:
                 newData.append((0, 0, 0, 0))
             else:
                 newData.append(item)

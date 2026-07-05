@@ -68,7 +68,7 @@ export function ConstructionTurnkey() {
               <p className="text-lg text-brand-grey mb-10 leading-relaxed max-w-lg">
                 Why juggle multiple contractors? D-Arc provides comprehensive turnkey solutions. We take full accountability for your project, from the initial architectural draft to handing over the keys. 
               </p>
-              <Link href="/services-in-kannur/turnkey-projects-in-kannur" className="px-8 py-4 bg-brand-black text-brand-gold font-bold uppercase tracking-wide hover:bg-brand-gold hover:text-brand-black transition-colors inline-block">
+              <Link href="/services/turnkey-projects-in-kannur" className="px-8 py-4 bg-brand-black text-brand-gold font-bold uppercase tracking-wide hover:bg-brand-gold hover:text-brand-black transition-colors inline-block">
                 View Turnkey Solutions
               </Link>
             </div>

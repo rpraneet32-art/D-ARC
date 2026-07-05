@@ -10,18 +10,18 @@ import { Logo } from '../shared/Logo';
 // Mega Menu Data
 const megaMenus = {
   services: [
-    { title: 'Architectural Design', href: '/services-in-kannur/architecture-in-kannur', desc: 'From residential homes to commercial buildings.' },
-    { title: 'Interior Design', href: '/services-in-kannur/interior-design-in-kannur', desc: 'Stunning, functional spaces that reflect your style.' },
-    { title: 'Construction', href: '/services-in-kannur/construction-in-kannur', desc: 'Meticulous attention to detail and high-quality materials.' },
-    { title: 'Turnkey Projects', href: '/services-in-kannur/turnkey-projects-in-kannur', desc: 'Comprehensive solutions from concept to completion.' },
-    { title: 'Modular Kitchen', href: '/services-in-kannur/modular-kitchen-in-kannur', desc: 'Style + functionality for the heart of your home.' },
-    { title: 'Home Renovation', href: '/services-in-kannur/home-renovation-in-kannur', desc: 'Transforming existing spaces into dream homes.' }
+    { title: 'Architectural Design', href: '/services/architecture-in-kannur', desc: 'From residential homes to commercial buildings.' },
+    { title: 'Interior Design', href: '/services/interior-design-in-kannur', desc: 'Stunning, functional spaces that reflect your style.' },
+    { title: 'Construction', href: '/services/construction-in-kannur', desc: 'Meticulous attention to detail and high-quality materials.' },
+    { title: 'Turnkey Projects', href: '/services/turnkey-projects-in-kannur', desc: 'Comprehensive solutions from concept to completion.' },
+    { title: 'Modular Kitchen', href: '/services/modular-kitchen-in-kannur', desc: 'Style + functionality for the heart of your home.' },
+    { title: 'Home Renovation', href: '/services/home-renovation-in-kannur', desc: 'Transforming existing spaces into dream homes.' }
   ],
   expertise: [
-    { title: 'Residential Architecture', href: '/expertise-in-kannur/residential-architecture-in-kannur', desc: 'Custom home designs tailored to your lifestyle.' },
-    { title: 'Commercial Architecture', href: '/expertise-in-kannur/commercial-architecture-in-kannur', desc: 'Innovative workspaces and retail environments.' },
-    { title: 'Luxury Villas', href: '/expertise-in-kannur/luxury-villas-in-kannur', desc: 'High-end bespoke residences with premium finishes.' },
-    { title: 'Sustainable Design', href: '/expertise-in-kannur/sustainable-design-in-kannur', desc: 'Eco-friendly architecture for a better tomorrow.' }
+    { title: 'Residential Architecture', href: '/expertise/residential-architecture-in-kannur', desc: 'Custom home designs tailored to your lifestyle.' },
+    { title: 'Commercial Architecture', href: '/expertise/commercial-architecture-in-kannur', desc: 'Innovative workspaces and retail environments.' },
+    { title: 'Luxury Villas', href: '/expertise/luxury-villas-in-kannur', desc: 'High-end bespoke residences with premium finishes.' },
+    { title: 'Sustainable Design', href: '/expertise/sustainable-design-in-kannur', desc: 'Eco-friendly architecture for a better tomorrow.' }
   ],
   portfolio: [
     { title: 'Residential', href: '/portfolio?category=residential', desc: 'Bespoke homes and luxury villas.' },
@@ -76,29 +76,29 @@ export function Header() {
             
             {/* Services Tab */}
             <li className="h-full flex items-center relative px-4" onMouseEnter={() => handleMouseEnter('services')}>
-              <Link href="/services-in-kannur" className={`text-sm font-medium flex items-center transition-colors ${activeMenu === 'services-in-kannur' || pathname.startsWith('/services-in-kannur') ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
-                Services <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'services-in-kannur' ? 'rotate-180' : ''}`} />
+              <Link href="/services" className={`text-sm font-medium flex items-center transition-colors ${activeMenu === 'services' || pathname.startsWith('/services') ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
+                Services <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'services' ? 'rotate-180' : ''}`} />
               </Link>
             </li>
 
             {/* Expertise Tab */}
             <li className="h-full flex items-center relative px-4" onMouseEnter={() => handleMouseEnter('expertise')}>
-              <Link href="/expertise-in-kannur" className={`text-sm font-medium flex items-center transition-colors ${activeMenu === 'expertise-in-kannur' || pathname.startsWith('/expertise-in-kannur') ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
-                Expertise <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'expertise-in-kannur' ? 'rotate-180' : ''}`} />
+              <Link href="/expertise" className={`text-sm font-medium flex items-center transition-colors ${activeMenu === 'expertise' || pathname.startsWith('/expertise') ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
+                Expertise <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'expertise' ? 'rotate-180' : ''}`} />
               </Link>
             </li>
 
             {/* Portfolio Tab */}
             <li className="h-full flex items-center relative px-4" onMouseEnter={() => handleMouseEnter('portfolio')}>
-              <Link href="/portfolio-in-kannur" className={`text-sm font-medium flex items-center transition-colors ${activeMenu === 'portfolio-in-kannur' || pathname.startsWith('/portfolio-in-kannur') ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
-                Portfolio <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'portfolio-in-kannur' ? 'rotate-180' : ''}`} />
+              <Link href="/portfolio" className={`text-sm font-medium flex items-center transition-colors ${activeMenu === 'portfolio' || pathname.startsWith('/portfolio') ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
+                Portfolio <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'portfolio' ? 'rotate-180' : ''}`} />
               </Link>
             </li>
 
             {/* Company Tab */}
             <li className="h-full flex items-center relative px-4" onMouseEnter={() => handleMouseEnter('company')}>
-              <Link href="/about-us-in-kannur" className={`text-sm font-medium flex items-center transition-colors ${activeMenu === 'about-us-in-kannur' || pathname === '/company' ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
-                Company <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'about-us-in-kannur' ? 'rotate-180' : ''}`} />
+              <Link href="/about-us" className={`text-sm font-medium flex items-center transition-colors ${activeMenu === 'about-us' || pathname === '/company' ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
+                Company <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'about-us' ? 'rotate-180' : ''}`} />
               </Link>
             </li>
 
@@ -137,7 +137,7 @@ export function Header() {
                       <div className="absolute inset-0 bg-brand-gold/5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
                       <h4 className="text-brand-white font-serif font-bold text-xl mb-3 relative z-10">Start Your Journey</h4>
                       <p className="text-brand-grey text-sm mb-6 relative z-10">Schedule a visit to our Experience Centre in Kannur to explore materials and designs.</p>
-                      <Link href="/contact-us-in-kannur" className="text-brand-gold text-sm font-bold uppercase tracking-wider hover:text-white transition-colors relative z-10 flex items-center">
+                      <Link href="/contact-us" className="text-brand-gold text-sm font-bold uppercase tracking-wider hover:text-white transition-colors relative z-10 flex items-center">
                         Book a Consultation <span className="ml-2 group-hover:translate-x-2 transition-transform">&rarr;</span>
                       </Link>
                     </div>
@@ -155,7 +155,7 @@ export function Header() {
             WhatsApp Us
           </a>
           {/* Refined CTA Button */}
-          <Link href="/contact-us-in-kannur" className="relative group overflow-hidden border border-brand-gold px-6 py-2.5">
+          <Link href="/contact-us" className="relative group overflow-hidden border border-brand-gold px-6 py-2.5">
             <div className="absolute inset-0 bg-brand-gold translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
             <span className="relative z-10 text-brand-gold group-hover:text-brand-black text-sm font-bold tracking-wide transition-colors duration-300">
               Get Project Estimate

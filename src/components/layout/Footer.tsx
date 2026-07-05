@@ -22,11 +22,11 @@ export function Footer() {
           <div>
             <h4 className="text-brand-white font-serif font-bold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-3">
-              <li><Link href="/about-us-in-kannur" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">About Us</Link></li>
-              <li><Link href="/services-in-kannur" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Our Services</Link></li>
-              <li><Link href="/portfolio-in-kannur" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Portfolio</Link></li>
+              <li><Link href="/about-us" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">About Us</Link></li>
+              <li><Link href="/services" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Our Services</Link></li>
+              <li><Link href="/portfolio" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Portfolio</Link></li>
               <li><Link href="/blog" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Blog</Link></li>
-              <li><Link href="/contact-us-in-kannur" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Contact Us</Link></li>
+              <li><Link href="/contact-us" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Contact Us</Link></li>
             </ul>
           </div>
 

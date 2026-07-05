@@ -55,7 +55,7 @@ export function InteriorDesignShowcase() {
           <p className="text-lg text-brand-grey mb-10 leading-relaxed">
             Every interior we design is a deeply personal narrative. We source premium materials, craft bespoke furniture in our Sofa Studio, and orchestrate light to transform empty rooms into breathtaking experiences.
           </p>
-          <Link href="/services-in-kannur/interior-design-in-kannur" className="inline-flex items-center text-white font-semibold uppercase tracking-wider text-sm hover:text-brand-gold transition-colors group">
+          <Link href="/services/interior-design-in-kannur" className="inline-flex items-center text-white font-semibold uppercase tracking-wider text-sm hover:text-brand-gold transition-colors group">
             Explore Interiors
             <svg className="w-5 h-5 ml-3 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -86,7 +86,7 @@ export function InteriorDesignShowcase() {
           {/* Final CTA slide inside the scroller */}
           <div className="relative w-[80vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] h-full flex flex-col items-center justify-center bg-[#111] border border-white/10 rounded-sm">
             <h4 className="text-4xl font-serif text-white mb-6 text-center">Ready to Redesign?</h4>
-            <Link href="/about-us-in-kannur/experience-centre" className="px-8 py-4 bg-brand-gold text-brand-black font-bold uppercase tracking-wide hover:bg-white transition-colors">
+            <Link href="/about-us/experience-centre" className="px-8 py-4 bg-brand-gold text-brand-black font-bold uppercase tracking-wide hover:bg-white transition-colors">
               Visit Sofa Studio
             </Link>
           </div>

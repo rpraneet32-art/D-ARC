@@ -21,7 +21,7 @@ export async function FeaturedProjects() {
               A Legacy of <br /> Engineering Excellence.
             </h3>
           </div>
-          <Link href="/portfolio-in-kannur" className="mt-8 md:mt-0 px-8 py-4 border border-brand-black text-brand-black font-bold uppercase tracking-wide hover:bg-brand-black hover:text-white transition-colors">
+          <Link href="/portfolio" className="mt-8 md:mt-0 px-8 py-4 border border-brand-black text-brand-black font-bold uppercase tracking-wide hover:bg-brand-black hover:text-white transition-colors">
             View All Projects
           </Link>
         </FadeIn>

@@ -66,8 +66,8 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
         
         {/* Logo */}
-        <Link href="/" className="flex-shrink-0 hover:opacity-80 transition-opacity">
-          <Logo className="scale-90 transform origin-left" />
+        <Link href="/" className="flex-shrink-0 hover:opacity-80 transition-opacity py-2">
+          <Logo />
         </Link>
         
         {/* Main Navigation */}

@@ -10,16 +10,16 @@ interface FAQItem {
 
 const defaultFaqs: FAQItem[] = [
   {
-    question: "What is the typical timeline for an architecture or interior design project?",
-    answer: "Project timelines vary significantly based on scale and complexity. A standard residential interior project might take 3-6 months from concept to handover, while ground-up architectural projects can span 12-24 months. We provide a detailed timeline during the initial consultation."
+    question: "What is the typical timeline for an architecture or interior design project in Kannur?",
+    answer: "Project timelines vary significantly based on scale and complexity. A standard residential interior project in Kannur might take 3-6 months from concept to handover, while ground-up architectural projects can span 12-24 months. We provide a detailed timeline during the initial consultation."
   },
   {
     question: "Do you handle turnkey execution, or only design consulting?",
-    answer: "We are a full-service firm. While we offer standalone design consulting, our specialty lies in turnkey projects. This means we handle everything from the initial blueprint and material sourcing to construction, interior furnishing, and final handover, ensuring total quality control."
+    answer: "We are a full-service firm. While we offer standalone design consulting, our specialty lies in turnkey projects across the Kannur district. This means we handle everything from the initial blueprint and material sourcing to construction, interior furnishing, and final handover, ensuring total quality control."
   },
   {
     question: "How do you determine the budget for a project?",
-    answer: "Budgets are highly bespoke. After our initial site visit and design consultation, we present a detailed Bill of Quantities (BOQ). We source premium materials directly and maintain transparent pricing, ensuring you know exactly where every rupee is invested."
+    answer: "Budgets are highly bespoke. After our initial site visit and design consultation, we present a detailed Bill of Quantities (BOQ). We source premium materials directly and maintain transparent pricing, ensuring you know exactly where every rupee is invested in your Kannur home."
   },
   {
     question: "Can I visit your studio to see materials before finalizing the design?",

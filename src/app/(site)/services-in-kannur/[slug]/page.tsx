@@ -4,6 +4,7 @@ import { FAQ } from "@/components/shared/FAQ";
 import { ContentFreshness } from "@/components/shared/ContentFreshness";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { services as staticServices } from "@/data/services";
 
@@ -93,6 +94,16 @@ export default async function ServicePage({ params }: Props) {
           <section className="mb-16">
             <h1 className="text-4xl md:text-6xl font-serif text-brand-black mb-6">{service.title} in Kannur</h1>
             <div className="w-20 h-1 bg-brand-gold mb-8"></div>
+            
+            <div className="mb-10 w-full h-[400px] relative rounded-xl overflow-hidden shadow-md">
+              <Image
+                src={service.slug.includes('commercial') ? "/assets/interior/premium-commercial.png" : (service.slug.includes('architecture') || service.slug.includes('turnkey') ? "/assets/projects/modern-villa.png" : "/assets/interior/premium-residential.png")}
+                alt={`${service.title} by D-Arc in Kannur`}
+                fill
+                className="object-cover"
+              />
+            </div>
+
             <p className="text-xl text-brand-black font-medium leading-relaxed mb-8">
               {service.content}
             </p>

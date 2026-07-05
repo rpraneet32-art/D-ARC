@@ -40,7 +40,7 @@ export default function ExpertisePage() {
           {expertise.map((item) => (
             <Link 
               key={item.slug}
-              href={`/expertise/${item.slug}`}
+              href={`/expertise-in-kannur/${item.slug}`}
               className="block group"
             >
               <div className="bg-white border border-gray-100 p-8 h-full rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">

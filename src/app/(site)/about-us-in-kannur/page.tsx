@@ -49,10 +49,13 @@ export default function CompanyPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
-          <div className="aspect-square bg-gray-100 rounded-xl overflow-hidden relative">
-            <div className="absolute inset-0 flex items-center justify-center text-brand-grey">
-              [Founder Image Placeholder]
-            </div>
+          <div className="aspect-square bg-gray-100 rounded-xl overflow-hidden relative shadow-md">
+            <Image 
+              src="/assets/team/owners.jpeg" 
+              alt="Founders of D-Arc Architectural Interiors" 
+              fill
+              className="object-cover"
+            />
           </div>
           <div>
             <h2 className="text-3xl font-serif text-brand-black mb-6">Our Story</h2>

@@ -27,7 +27,7 @@ export default function ServicesPage() {
           {services.map((service) => (
             <Link 
               key={service.slug}
-              href={`/services/${service.slug}`}
+              href={`/services-in-kannur/${service.slug}`}
               className="block group"
             >
               <div className="bg-white border border-gray-100 p-8 h-full rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">

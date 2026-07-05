@@ -2,6 +2,7 @@ import { targetLocations } from "@/data/locations";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { FAQ } from "@/components/shared/FAQ";
 
@@ -64,6 +65,15 @@ export default async function LocationPage({ params }: Props) {
               Architects in {location.name} Creating Luxury Homes
             </h1>
             <div className="w-20 h-1 bg-brand-gold mb-8"></div>
+            
+            <div className="mb-10 w-full h-[400px] relative rounded-xl overflow-hidden shadow-md">
+              <Image
+                src="/assets/projects/modern-villa.png"
+                alt={`Luxury Architecture and Interior Design in ${location.name}`}
+                fill
+                className="object-cover"
+              />
+            </div>
             
             <p className="text-lg md:text-xl text-brand-grey leading-relaxed mb-6">
               D-Arc Architectural Interiors is proud to be recognized as the premier choice for <strong className="text-brand-black font-medium">architects serving {location.name}</strong>. {location.description} Our diverse portfolio and commitment to uncompromising quality have established us as leaders in the region, particularly near key landmarks like {location.landmarks}. For over a decade, we have been transforming visions into reality by designing bespoke luxury homes, modern residential villas, and dynamic commercial workspaces that reflect the unique lifestyle and aspirations of our clients in the {location.name} region.

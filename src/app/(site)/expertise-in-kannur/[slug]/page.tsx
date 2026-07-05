@@ -3,6 +3,7 @@ import { EXPERTISE_QUERY, EXPERTISE_BY_SLUG_QUERY } from "@/sanity/lib/queries";
 import { FAQ } from "@/components/shared/FAQ";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { expertise as staticExpertises } from "@/data/expertise";
 
@@ -70,6 +71,16 @@ export default async function ExpertiseDetailPage({ params }: Props) {
         <div className="max-w-4xl bg-white p-8 md:p-12 border border-gray-100 rounded-xl shadow-sm mt-6">
           <h1 className="text-4xl md:text-6xl font-serif text-brand-black mb-6">{item.title}</h1>
           <div className="w-20 h-1 bg-brand-gold mb-8"></div>
+          
+          <div className="mb-10 w-full h-[400px] relative rounded-xl overflow-hidden shadow-md">
+            <Image
+              src={item.slug.includes('commercial') ? "/assets/interior/premium-commercial.png" : (item.slug.includes('villa') ? "/assets/projects/modern-villa.png" : "/assets/interior/premium-residential.png")}
+              alt={`${item.title} by D-Arc in Kannur`}
+              fill
+              className="object-cover"
+            />
+          </div>
+
           <p className="text-lg md:text-xl text-brand-grey leading-relaxed">
             {item.content}
           </p>

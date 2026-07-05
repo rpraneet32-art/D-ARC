@@ -18,6 +18,12 @@ export const targetLocations = [
     description: "A major commercial and educational hub, Taliparamba is seeing significant growth in premium residential and commercial projects. Our construction company brings unparalleled expertise to this dynamic area."
   },
   {
+    name: "Thalassery",
+    slug: "thalassery",
+    landmarks: "Thalassery Fort, Muzhappilangad Drive-in Beach, Overbury's Folly",
+    description: "The heritage city of Thalassery requires a deep understanding of colonial and traditional Kerala architecture. We seamlessly blend modern luxury with the rich cultural aesthetic of this historic coastal town."
+  },
+  {
     name: "Pazhayangadi",
     slug: "pazhayangadi",
     landmarks: "Pazhayangadi Mosque, Madayi Para, Ezhimala Naval Academy vicinity",

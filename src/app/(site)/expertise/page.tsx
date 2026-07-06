@@ -19,7 +19,7 @@ const expertiseAreas = [
     title: "Commercial Architecture",
     slug: "commercial-architecture",
     description: "Creating functional, striking commercial spaces that elevate your brand and provide optimal environments for business.",
-    image: "/assets/projects/commercial-architects-kannur.jpeg",
+    image: "/assets/proj-pics/11.jpeg",
   },
   {
     title: "Luxury Villas",
@@ -31,7 +31,7 @@ const expertiseAreas = [
     title: "Sustainable Design",
     slug: "sustainable-design",
     description: "Eco-friendly architectural practices that minimize environmental impact while maximizing natural light and energy efficiency.",
-    image: "/assets/projects/interior-designers-kannur-home.webp",
+    image: "/assets/proj-pics/6.jpeg",
   }
 ];
 
@@ -60,6 +60,7 @@ export default function ExpertiseHubPage() {
                   src={area.image}
                   alt={area.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-brand-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />

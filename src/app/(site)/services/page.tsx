@@ -19,13 +19,13 @@ const services = [
     title: "Interior Design",
     slug: "interior-design",
     description: "Transforming empty spaces into inspiring environments. We specialize in luxury residential interiors, modular kitchens, and office layouts.",
-    image: "/assets/projects/interior-designers-kannur-office.jpeg",
+    image: "/assets/proj-pics/2.jpeg",
   },
   {
     title: "Construction",
     slug: "construction",
     description: "Our construction division brings designs to life with uncompromising quality, skilled craftsmanship, and strict adherence to timelines.",
-    image: "/assets/projects/commercial-architects-kannur.jpeg",
+    image: "/assets/projects/best-construction-company-kannur.jpeg",
   },
   {
     title: "Turnkey Projects",
@@ -37,13 +37,13 @@ const services = [
     title: "Modular Kitchen",
     slug: "modular-kitchen",
     description: "Ergonomic, stylish, and highly functional modular kitchens built with premium hardware and finishes tailored to your cooking habits.",
-    image: "/assets/projects/interior-designers-kannur-home.webp",
+    image: "/assets/proj-pics/12.jpeg",
   },
   {
     title: "Home Renovation",
     slug: "home-renovation",
     description: "Breathe new life into your existing property. Our renovation services modernize your space while respecting its original character.",
-    image: "/assets/projects/architects-kannur-villa.webp", // Using a placeholder for now
+    image: "/assets/proj-pics/7.jpeg",
   }
 ];
 
@@ -73,6 +73,7 @@ export default function ServicesHubPage() {
                     src={service.image}
                     alt={service.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-brand-black/40 group-hover:bg-brand-black/20 transition-colors" />

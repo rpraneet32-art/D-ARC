@@ -79,7 +79,7 @@ export default async function LocationPage({ params }: Props) {
               D-Arc Architectural Interiors is proud to be recognized as the premier choice for <strong className="text-brand-black font-medium">architects serving {location.name}</strong>. {location.description} Our diverse portfolio and commitment to uncompromising quality have established us as leaders in the region, particularly near key landmarks like {location.landmarks}. For over a decade, we have been transforming visions into reality by designing bespoke luxury homes, modern residential villas, and dynamic commercial workspaces that reflect the unique lifestyle and aspirations of our clients in the {location.name} region.
             </p>
             <p className="text-brand-grey leading-relaxed mb-6">
-              Whether you are looking to build a contemporary masterpiece from the ground up or require meticulous renovations to an existing heritage property, our team possesses the profound local knowledge and technical expertise required to navigate the complexities of construction in Kerala. From navigating local building codes and zoning laws to optimizing floor plans for the tropical climate and monsoon seasons, being the top <Link href="/services-in-kannur/architecture-in-kannur" className="text-brand-gold hover:underline">residential architects in Kannur</Link> means we leave nothing to chance. We believe that true architectural excellence is born at the intersection of aesthetic brilliance and uncompromising functionality.
+              Whether you are looking to build a contemporary masterpiece from the ground up or require meticulous renovations to an existing heritage property, our team possesses the profound local knowledge and technical expertise required to navigate the complexities of construction in Kerala. From navigating local building codes and zoning laws to optimizing floor plans for the tropical climate and monsoon seasons, being the top <Link href="/services/architecture" className="text-brand-gold hover:underline">residential architects in Kannur</Link> means we leave nothing to chance. We believe that true architectural excellence is born at the intersection of aesthetic brilliance and uncompromising functionality.
             </p>
             <p className="text-brand-grey leading-relaxed mb-6">
               The architectural landscape of {location.name} is evolving rapidly. There is a growing demand for sustainable, energy-efficient designs that seamlessly blend indoor and outdoor living spaces. We respond to this demand by implementing passive cooling strategies, maximizing natural light through expansive glazing, and integrating lush, landscaped courtyards into our core designs. When you partner with us, you are not merely hiring a draughtsman; you are collaborating with visionary thinkers dedicated to elevating your standard of living through thoughtful spatial design.
@@ -96,12 +96,12 @@ export default async function LocationPage({ params }: Props) {
 
             <h3 className="text-xl font-semibold text-brand-black mb-4 mt-8">Bespoke Residential Interiors</h3>
             <p className="text-brand-grey leading-relaxed mb-6">
-              Your home should be a sanctuary—a deeply personal reflection of your tastes and experiences. As leading experts in <Link href="/services-in-kannur/interior-design-in-kannur" className="text-brand-gold hover:underline">luxury interior design in Kannur</Link>, we meticulously select every element, from the tactile quality of the fabrics to the precise color temperature of the ambient lighting. We specialize in custom furniture design, sourcing rare materials, and integrating smart home automation systems to create environments of unparalleled comfort and sophistication in {location.name}.
+              Your home should be a sanctuary—a deeply personal reflection of your tastes and experiences. As leading experts in <Link href="/services/interior-design" className="text-brand-gold hover:underline">luxury interior design in Kannur</Link>, we meticulously select every element, from the tactile quality of the fabrics to the precise color temperature of the ambient lighting. We specialize in custom furniture design, sourcing rare materials, and integrating smart home automation systems to create environments of unparalleled comfort and sophistication in {location.name}.
             </p>
             
             <h3 className="text-xl font-semibold text-brand-black mb-4 mt-8">Premium Modular Kitchens</h3>
             <p className="text-brand-grey leading-relaxed mb-6">
-              The kitchen is the heart of the modern Indian home. Our specialized <Link href="/services-in-kannur/modular-kitchen-in-kannur" className="text-brand-gold hover:underline">modular kitchen</Link> designs combine European minimalist aesthetics with the robust functionality required for traditional Kerala cooking. We utilize high-moisture-resistant materials, state-of-the-art German hardware, and ergonomic layouts to ensure your kitchen in {location.name} is both beautiful and highly efficient. Whether you prefer a sleek, handle-less contemporary finish or a warm, wood-textured transitional style, our designers will tailor the space to your exact culinary requirements.
+              The kitchen is the heart of the modern Indian home. Our specialized <Link href="/services/modular-kitchen" className="text-brand-gold hover:underline">modular kitchen</Link> designs combine European minimalist aesthetics with the robust functionality required for traditional Kerala cooking. We utilize high-moisture-resistant materials, state-of-the-art German hardware, and ergonomic layouts to ensure your kitchen in {location.name} is both beautiful and highly efficient. Whether you prefer a sleek, handle-less contemporary finish or a warm, wood-textured transitional style, our designers will tailor the space to your exact culinary requirements.
             </p>
           </section>
 
@@ -114,7 +114,7 @@ export default async function LocationPage({ params }: Props) {
 
             <h3 className="text-xl font-semibold text-brand-black mb-4 mt-8">Uncompromising Building Standards</h3>
             <p className="text-brand-grey leading-relaxed mb-6">
-              We utilize only premium-grade raw materials sourced from verified suppliers. Our structural engineers and site supervisors conduct rigorous multi-point quality checks at every phase of construction, from the initial soil testing and foundation laying to the final coat of weather-resistant exterior paint. As the leading <Link href="/services-in-kannur/turnkey-projects-in-kannur" className="text-brand-gold hover:underline">builders in {location.name}</Link>, we refuse to cut corners, ensuring that your property appreciates in value and stands strong against the test of time and weather.
+              We utilize only premium-grade raw materials sourced from verified suppliers. Our structural engineers and site supervisors conduct rigorous multi-point quality checks at every phase of construction, from the initial soil testing and foundation laying to the final coat of weather-resistant exterior paint. As the leading <Link href="/services/turnkey-projects" className="text-brand-gold hover:underline">builders in {location.name}</Link>, we refuse to cut corners, ensuring that your property appreciates in value and stands strong against the test of time and weather.
             </p>
 
             <h3 className="text-xl font-semibold text-brand-black mb-4 mt-8">Seamless Project Management</h3>
@@ -134,13 +134,13 @@ export default async function LocationPage({ params }: Props) {
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-white">Commercial Architecture</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Beyond residential projects, we design high-yield commercial spaces including retail showrooms, corporate offices, and hospitality venues. A well-designed commercial space can significantly boost employee productivity and customer retention. View our <Link href="/portfolio-in-kannur" className="text-brand-gold hover:underline">commercial portfolio</Link> to see our impact.
+                  Beyond residential projects, we design high-yield commercial spaces including retail showrooms, corporate offices, and hospitality venues. A well-designed commercial space can significantly boost employee productivity and customer retention. View our <Link href="/portfolio" className="text-brand-gold hover:underline">commercial portfolio</Link> to see our impact.
                 </p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-white">Renovation & Remodeling</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Transform your outdated property into a modern masterpiece. Our <Link href="/services-in-kannur/renovation-in-kannur" className="text-brand-gold hover:underline">renovation services</Link> in {location.name} involve careful structural assessments, space optimization, and complete aesthetic overhauls while preserving the emotional heritage of the original structure.
+                  Transform your outdated property into a modern masterpiece. Our <Link href="/services/renovation" className="text-brand-gold hover:underline">renovation services</Link> in {location.name} involve careful structural assessments, space optimization, and complete aesthetic overhauls while preserving the emotional heritage of the original structure.
                 </p>
               </div>
               <div>
@@ -218,10 +218,10 @@ export default async function LocationPage({ params }: Props) {
               Whether you are looking to build a sprawling luxury villa or seeking the expertise of premium <strong className="text-brand-black font-medium">interior designers in {location.name}</strong>, our team is ready to listen. Let us create something extraordinary together.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/contact-us-in-kannur" className="inline-block bg-brand-black text-brand-gold px-10 py-4 font-bold uppercase tracking-wider text-sm hover:bg-brand-gold hover:text-brand-black transition-all shadow-lg hover:shadow-xl">
+              <Link href="/contact-us" className="inline-block bg-brand-black text-brand-gold px-10 py-4 font-bold uppercase tracking-wider text-sm hover:bg-brand-gold hover:text-brand-black transition-all shadow-lg hover:shadow-xl">
                 Schedule a Free Consultation
               </Link>
-              <Link href="/about-us-in-kannur" className="inline-block border-2 border-brand-black text-brand-black px-10 py-4 font-bold uppercase tracking-wider text-sm hover:bg-brand-black hover:text-white transition-all">
+              <Link href="/about-us" className="inline-block border-2 border-brand-black text-brand-black px-10 py-4 font-bold uppercase tracking-wider text-sm hover:bg-brand-black hover:text-white transition-all">
                 Learn More About Us
               </Link>
             </div>

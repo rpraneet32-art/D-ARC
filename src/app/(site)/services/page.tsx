@@ -11,37 +11,37 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Architectural Design",
-    slug: "architecture-in-kannur",
+    slug: "architecture",
     description: "From visionary concepts to detailed blueprints, we design homes and commercial spaces that blend aesthetics with robust functionality.",
     image: "/assets/projects/architects-kannur-villa.webp",
   },
   {
     title: "Interior Design",
-    slug: "interior-design-in-kannur",
+    slug: "interior-design",
     description: "Transforming empty spaces into inspiring environments. We specialize in luxury residential interiors, modular kitchens, and office layouts.",
     image: "/assets/projects/interior-designers-kannur-office.jpeg",
   },
   {
     title: "Construction",
-    slug: "construction-in-kannur",
+    slug: "construction",
     description: "Our construction division brings designs to life with uncompromising quality, skilled craftsmanship, and strict adherence to timelines.",
     image: "/assets/projects/commercial-architects-kannur.jpeg",
   },
   {
     title: "Turnkey Projects",
-    slug: "turnkey-projects-in-kannur",
+    slug: "turnkey-projects",
     description: "A hassle-free experience. We manage everything from initial design and approvals to construction and final interior styling.",
     image: "/assets/projects/modern-residential-architects-kannur.jpeg",
   },
   {
     title: "Modular Kitchen",
-    slug: "modular-kitchen-in-kannur",
+    slug: "modular-kitchen",
     description: "Ergonomic, stylish, and highly functional modular kitchens built with premium hardware and finishes tailored to your cooking habits.",
     image: "/assets/projects/interior-designers-kannur-home.webp",
   },
   {
     title: "Home Renovation",
-    slug: "home-renovation-in-kannur",
+    slug: "home-renovation",
     description: "Breathe new life into your existing property. Our renovation services modernize your space while respecting its original character.",
     image: "/assets/projects/architects-kannur-villa.webp", // Using a placeholder for now
   }

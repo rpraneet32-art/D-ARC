@@ -61,7 +61,7 @@ export default async function ExpertiseDetailPage({ params }: Props) {
     <main className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-6">
         <Breadcrumb />
-        <Link href="/expertise-in-kannur" className="text-brand-gold hover:text-brand-black transition-colors mb-8 inline-flex items-center text-sm font-semibold uppercase tracking-wider">
+        <Link href="/expertise" className="text-brand-gold hover:text-brand-black transition-colors mb-8 inline-flex items-center text-sm font-semibold uppercase tracking-wider">
           <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -87,11 +87,11 @@ export default async function ExpertiseDetailPage({ params }: Props) {
           
           <div className="mt-12 pt-8 border-t border-gray-100">
             <h3 className="text-2xl font-serif text-brand-black mb-4">Discuss your specific requirements</h3>
-            <Link href="/contact-us-in-kannur" className="inline-block bg-brand-black text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-brand-gold transition-colors">
+            <Link href="/contact-us" className="inline-block bg-brand-black text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-brand-gold transition-colors">
               Contact Our Experts
             </Link>
             <p className="mt-6 text-sm text-brand-grey">
-              Explore our <Link href="/services-in-kannur" className="text-brand-gold hover:underline">Services</Link> or view our <Link href="/portfolio-in-kannur" className="text-brand-gold hover:underline">Portfolio</Link> to see our expertise in action.
+              Explore our <Link href="/services" className="text-brand-gold hover:underline">Services</Link> or view our <Link href="/portfolio" className="text-brand-gold hover:underline">Portfolio</Link> to see our expertise in action.
             </p>
           </div>
         </div>

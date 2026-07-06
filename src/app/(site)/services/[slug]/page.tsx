@@ -124,7 +124,7 @@ export default async function ServicePage({ params }: Props) {
 
             <h3 className="text-xl font-semibold text-brand-black mb-4 mt-8">Bespoke Residential {service.title}</h3>
             <p className="text-brand-grey leading-relaxed mb-6">
-              Residential projects hold a special place in our portfolio. A home is a deeply personal sanctuary, and our residential <Link href="/services/interior-design-in-kannur" className="text-brand-gold hover:underline">interior design</Link> and construction teams treat it as such. We focus on maximizing natural light, ensuring optimal cross-ventilation, and utilizing sustainable materials that thrive in Kerala's tropical climate. By integrating smart home technologies discreetly into the architectural fabric, we provide our clients with homes that are not only visually stunning but incredibly efficient to run and maintain.
+              Residential projects hold a special place in our portfolio. A home is a deeply personal sanctuary, and our residential <Link href="/services/interior-design" className="text-brand-gold hover:underline">interior design</Link> and construction teams treat it as such. We focus on maximizing natural light, ensuring optimal cross-ventilation, and utilizing sustainable materials that thrive in Kerala's tropical climate. By integrating smart home technologies discreetly into the architectural fabric, we provide our clients with homes that are not only visually stunning but incredibly efficient to run and maintain.
             </p>
 
             <h3 className="text-xl font-semibold text-brand-black mb-4 mt-8">Dynamic Commercial {service.title}</h3>
@@ -147,12 +147,12 @@ export default async function ServicePage({ params }: Props) {
 
             <h3 className="text-xl font-semibold text-brand-black mb-4 mt-8">Phase 2: Detailed 3D Visualization</h3>
             <p className="text-brand-grey leading-relaxed mb-6">
-              We leverage industry-leading software to create hyper-realistic 3D renders of your proposed space. This critical step allows you to visually experience the outcome, tweaking color palettes, material finishes, and lighting schemes long before physical execution begins. This is particularly crucial for our <Link href="/services/modular-kitchen-in-kannur" className="text-brand-gold hover:underline">modular kitchen</Link> designs where spatial ergonomics must be perfect.
+              We leverage industry-leading software to create hyper-realistic 3D renders of your proposed space. This critical step allows you to visually experience the outcome, tweaking color palettes, material finishes, and lighting schemes long before physical execution begins. This is particularly crucial for our <Link href="/services/modular-kitchen" className="text-brand-gold hover:underline">modular kitchen</Link> designs where spatial ergonomics must be perfect.
             </p>
             
             <h3 className="text-xl font-semibold text-brand-black mb-4 mt-8">Phase 3: Execution & Turnkey Delivery</h3>
             <p className="text-brand-grey leading-relaxed mb-6">
-              As experts in <Link href="/services/turnkey-projects-in-kannur" className="text-brand-gold hover:underline">turnkey projects</Link>, we transition seamlessly from design to execution. Our in-house procurement team sources the finest materials, while our site supervisors ensure strict quality control at every milestone. You receive a fully finished, ready-to-use space without the stress of managing multiple uncoordinated vendors.
+              As experts in <Link href="/services/turnkey-projects" className="text-brand-gold hover:underline">turnkey projects</Link>, we transition seamlessly from design to execution. Our in-house procurement team sources the finest materials, while our site supervisors ensure strict quality control at every milestone. You receive a fully finished, ready-to-use space without the stress of managing multiple uncoordinated vendors.
             </p>
           </section>
 

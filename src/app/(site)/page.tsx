@@ -78,13 +78,13 @@ export default function Home() {
             <span className="text-brand-gold">Creating Luxury Homes</span>
           </h1>
           <p className="text-lg md:text-xl text-brand-grey mb-10 max-w-2xl mx-auto">
-            The leading <Link href="/services-in-kannur/architecture-in-kannur" className="text-brand-gold hover:underline">architecture</Link> and <Link href="/services-in-kannur/interior-design-in-kannur" className="text-brand-gold hover:underline">interior design</Link> firm in Kannur. Transforming spaces into exceptional environments that inspire and enrich lives.
+            The leading <Link href="/services/architecture" className="text-brand-gold hover:underline">architecture</Link> and <Link href="/services/interior-design" className="text-brand-gold hover:underline">interior design</Link> firm in Kannur. Transforming spaces into exceptional environments that inspire and enrich lives.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/portfolio-in-kannur" className="px-8 py-4 bg-brand-gold text-brand-black font-bold uppercase tracking-wide hover:bg-white transition-colors">
+            <Link href="/portfolio" className="px-8 py-4 bg-brand-gold text-brand-black font-bold uppercase tracking-wide hover:bg-white transition-colors">
               Explore Our Work
             </Link>
-            <Link href="/contact-us-in-kannur" className="px-8 py-4 border border-brand-gold text-brand-gold font-bold uppercase tracking-wide hover:bg-brand-gold hover:text-brand-black transition-colors">
+            <Link href="/contact-us" className="px-8 py-4 border border-brand-gold text-brand-gold font-bold uppercase tracking-wide hover:bg-brand-gold hover:text-brand-black transition-colors">
               Get an Estimate
             </Link>
           </div>
@@ -102,7 +102,7 @@ export default function Home() {
               </h2>
               <div className="space-y-6 text-brand-grey">
                 <p>
-                  Founded in Mattannur, <strong className="text-white font-medium">Kannur</strong>, in 2014 by Afzal Ali, D-Arc has over <strong className="text-white font-medium">10+ years of experience</strong> at the forefront of transforming living spaces. With a deep-rooted passion for design and <Link href="/services-in-kannur/construction-in-kannur" className="text-brand-gold hover:underline">construction</Link>, we&apos;ve evolved into an <strong className="text-white font-medium">award-winning</strong> comprehensive design and build firm.
+                  Founded in Mattannur, <strong className="text-white font-medium">Kannur</strong>, in 2014 by Afzal Ali, D-Arc has over <strong className="text-white font-medium">10+ years of experience</strong> at the forefront of transforming living spaces. With a deep-rooted passion for design and <Link href="/services/construction" className="text-brand-gold hover:underline">construction</Link>, we&apos;ve evolved into an <strong className="text-white font-medium">award-winning</strong> comprehensive design and build firm.
                 </p>
                 <p>
                   Our <strong className="text-white font-medium">proven process</strong> ensures flawless execution. Joining the team in 2023, Shuhood Bin Haris brought <strong className="text-white font-medium">certified</strong> expertise in custom furniture and interior design, further enriching our offerings. Today, D-Arc stands as a symbol of innovation, delivering exceptional projects that cater to diverse tastes and lifestyles across our prime <strong className="text-white font-medium">locations</strong>.
@@ -161,13 +161,13 @@ export default function Home() {
               Building your dream home starts with choosing the right design partner. At D-Arc, our experienced Architects in Kannur combine creativity, technical expertise, and over 10 years of industry experience to design exceptional residential and commercial spaces across Kannur District. From luxury villas and custom homes to modern commercial developments, every project is tailored to your vision and lifestyle.
             </p>
             <p>
-              As one of the trusted <Link href="/services-in-kannur/interior-design-in-kannur" className="font-medium hover:text-brand-gold transition-colors">Interior Designers in Kannur</Link>, we believe that outstanding architecture deserves equally remarkable interiors. Our interior design team works closely with our architects to create elegant, functional spaces through thoughtful space planning, premium materials, bespoke furniture, modular kitchens, and carefully curated finishes that enhance everyday living.
+              As one of the trusted <Link href="/services/interior-design" className="font-medium hover:text-brand-gold transition-colors">Interior Designers in Kannur</Link>, we believe that outstanding architecture deserves equally remarkable interiors. Our interior design team works closely with our architects to create elegant, functional spaces through thoughtful space planning, premium materials, bespoke furniture, modular kitchens, and carefully curated finishes that enhance everyday living.
             </p>
             <p>
-              Recognized as one of the Best Residential Architects in Kannur, D-Arc offers complete architecture, interior design, <Link href="/services-in-kannur/construction-in-kannur" className="font-medium hover:text-brand-gold transition-colors">construction</Link>, home renovation, and turnkey project solutions under one roof. Our integrated design-and-build approach ensures seamless coordination, superior craftsmanship, transparent communication, and timely project delivery from concept to completion.
+              Recognized as one of the Best Residential Architects in Kannur, D-Arc offers complete architecture, interior design, <Link href="/services/construction" className="font-medium hover:text-brand-gold transition-colors">construction</Link>, home renovation, and turnkey project solutions under one roof. Our integrated design-and-build approach ensures seamless coordination, superior craftsmanship, transparent communication, and timely project delivery from concept to completion.
             </p>
             <p>
-              Whether you’re planning a new luxury villa, renovating your existing home, or developing a commercial property, our team provides personalized solutions that reflect your aspirations while meeting the highest standards of quality and innovation. As a leading <Link href="/services-in-kannur/construction-in-kannur" className="font-medium hover:text-brand-gold transition-colors">Construction Company in Kannur</Link>, we focus on creating spaces that are timeless, functional, and built to last.
+              Whether you’re planning a new luxury villa, renovating your existing home, or developing a commercial property, our team provides personalized solutions that reflect your aspirations while meeting the highest standards of quality and innovation. As a leading <Link href="/services/construction" className="font-medium hover:text-brand-gold transition-colors">Construction Company in Kannur</Link>, we focus on creating spaces that are timeless, functional, and built to last.
             </p>
             <p>
               Visit our Home Experience Centre to explore premium materials, innovative design concepts, and completed project inspirations. Discover why homeowners across Kannur District choose D-Arc as their preferred Architects in Kannur for creating homes that perfectly blend architectural excellence with sophisticated interior design.
@@ -182,7 +182,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-brand-black mb-6 leading-tight">Ready to Build Your Dream Space?</h2>
           <p className="text-brand-black/80 text-xl mb-10 max-w-2xl mx-auto">Schedule a consultation at our Home Experience Center in Mattannur, Kannur.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact-us-in-kannur" className="inline-block bg-brand-black text-brand-gold px-12 py-5 font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-brand-black transition-colors">
+            <Link href="/contact-us" className="inline-block bg-brand-black text-brand-gold px-12 py-5 font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-brand-black transition-colors">
               Contact Us Today
             </Link>
             <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" className="inline-block border-2 border-brand-black text-brand-black px-12 py-5 font-bold uppercase tracking-wider text-sm hover:bg-brand-black hover:text-white transition-colors">

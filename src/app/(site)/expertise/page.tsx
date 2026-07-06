@@ -11,25 +11,25 @@ export const metadata: Metadata = {
 const expertiseAreas = [
   {
     title: "Residential Architecture",
-    slug: "residential-architecture-in-kannur",
+    slug: "residential-architecture",
     description: "Designing bespoke homes that reflect your personality and cater to your daily life. From contemporary houses to traditional Kerala styles.",
     image: "/assets/projects/modern-residential-architects-kannur.jpeg",
   },
   {
     title: "Commercial Architecture",
-    slug: "commercial-architecture-in-kannur",
+    slug: "commercial-architecture",
     description: "Creating functional, striking commercial spaces that elevate your brand and provide optimal environments for business.",
     image: "/assets/projects/commercial-architects-kannur.jpeg",
   },
   {
     title: "Luxury Villas",
-    slug: "luxury-villas-in-kannur",
+    slug: "luxury-villas",
     description: "High-end bespoke residences featuring premium materials, vast open spaces, and world-class architectural detailing.",
     image: "/assets/projects/architects-kannur-villa.webp",
   },
   {
     title: "Sustainable Design",
-    slug: "sustainable-design-in-kannur",
+    slug: "sustainable-design",
     description: "Eco-friendly architectural practices that minimize environmental impact while maximizing natural light and energy efficiency.",
     image: "/assets/projects/interior-designers-kannur-home.webp",
   }

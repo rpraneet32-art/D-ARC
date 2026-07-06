@@ -10,12 +10,12 @@ export default function ExperienceCentrePage() {
   return (
     <div className="min-h-screen bg-brand-black pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
             D-Arc <span className="text-brand-gold">Experience Centre</span>
           </h1>
           <p className="text-brand-grey text-lg max-w-2xl mx-auto">
-            Welcome to our interactive digital tour. Click on any space below to immerse yourself in our curated residential and commercial setups, material libraries, and bespoke design concepts.
+            Take a virtual walkthrough of our curated residential and commercial setups, material libraries, and bespoke design concepts.
           </p>
         </div>
         

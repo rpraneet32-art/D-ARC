@@ -4,35 +4,7 @@ const nextConfig: NextConfig = {
   compiler: {
     styledComponents: true,
   },
-  async redirects() {
-    return [
-      {
-        source: '/company',
-        destination: '/about-us-in-kannur',
-        permanent: true,
-      },
-      {
-        source: '/contact-us',
-        destination: '/contact-us-in-kannur',
-        permanent: true,
-      },
-      {
-        source: '/services',
-        destination: '/services-in-kannur',
-        permanent: true,
-      },
-      {
-        source: '/expertise',
-        destination: '/expertise-in-kannur',
-        permanent: true,
-      },
-      {
-        source: '/locations',
-        destination: '/locations-in-kannur',
-        permanent: true,
-      },
-    ];
-  },
+
   async headers() {
     return [
       {

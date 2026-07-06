@@ -8,22 +8,14 @@ export const metadata: Metadata = {
 
 export default function ExperienceCentrePage() {
   return (
-    <div className="min-h-screen bg-brand-black pt-24 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-            D-Arc <span className="text-brand-gold">Experience Centre</span>
-          </h1>
-          <p className="text-brand-grey text-lg max-w-2xl mx-auto">
-            Take a virtual walkthrough of our curated residential and commercial setups, material libraries, and bespoke design concepts.
-          </p>
-        </div>
-        
-        <DigitalTour />
-        
-        <div className="mt-20 text-center border-t border-white/10 pt-16">
+    <div className="min-h-screen bg-brand-black">
+      {/* The Digital Tour handles its own full-screen dimensions */}
+      <DigitalTour />
+      
+      <div className="bg-brand-black py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+        <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-serif font-bold text-white mb-6">Visit Us In Person</h2>
-          <p className="text-brand-grey mb-8">Ready to feel the textures and see the craftsmanship up close?</p>
+          <p className="text-brand-grey mb-8 text-lg">Ready to feel the textures and see the craftsmanship up close?</p>
           <a href="/contact-us" className="inline-block bg-brand-gold text-brand-black font-bold uppercase tracking-widest px-8 py-4 hover:bg-white transition-colors">
             Book an Appointment
           </a>

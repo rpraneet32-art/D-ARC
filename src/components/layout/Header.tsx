@@ -10,18 +10,18 @@ import { Logo } from '../shared/Logo';
 // Mega Menu Data
 const megaMenus = {
   services: [
-    { title: 'Architectural Design', href: '/services/architecture-in-kannur', desc: 'From residential homes to commercial buildings.' },
-    { title: 'Interior Design', href: '/services/interior-design-in-kannur', desc: 'Stunning, functional spaces that reflect your style.' },
-    { title: 'Construction', href: '/services/construction-in-kannur', desc: 'Meticulous attention to detail and high-quality materials.' },
-    { title: 'Turnkey Projects', href: '/services/turnkey-projects-in-kannur', desc: 'Comprehensive solutions from concept to completion.' },
-    { title: 'Modular Kitchen', href: '/services/modular-kitchen-in-kannur', desc: 'Style + functionality for the heart of your home.' },
-    { title: 'Home Renovation', href: '/services/home-renovation-in-kannur', desc: 'Transforming existing spaces into dream homes.' }
+    { title: 'Architectural Design', href: '/services/architecture', desc: 'From residential homes to commercial buildings.' },
+    { title: 'Interior Design', href: '/services/interior-design', desc: 'Stunning, functional spaces that reflect your style.' },
+    { title: 'Construction', href: '/services/construction', desc: 'Meticulous attention to detail and high-quality materials.' },
+    { title: 'Turnkey Projects', href: '/services/turnkey-projects', desc: 'Comprehensive solutions from concept to completion.' },
+    { title: 'Modular Kitchen', href: '/services/modular-kitchen', desc: 'Style + functionality for the heart of your home.' },
+    { title: 'Home Renovation', href: '/services/home-renovation', desc: 'Transforming existing spaces into dream homes.' }
   ],
   expertise: [
-    { title: 'Residential Architecture', href: '/expertise/residential-architecture-in-kannur', desc: 'Custom home designs tailored to your lifestyle.' },
-    { title: 'Commercial Architecture', href: '/expertise/commercial-architecture-in-kannur', desc: 'Innovative workspaces and retail environments.' },
-    { title: 'Luxury Villas', href: '/expertise/luxury-villas-in-kannur', desc: 'High-end bespoke residences with premium finishes.' },
-    { title: 'Sustainable Design', href: '/expertise/sustainable-design-in-kannur', desc: 'Eco-friendly architecture for a better tomorrow.' }
+    { title: 'Residential Architecture', href: '/expertise/residential-architecture', desc: 'Custom home designs tailored to your lifestyle.' },
+    { title: 'Commercial Architecture', href: '/expertise/commercial-architecture', desc: 'Innovative workspaces and retail environments.' },
+    { title: 'Luxury Villas', href: '/expertise/luxury-villas', desc: 'High-end bespoke residences with premium finishes.' },
+    { title: 'Sustainable Design', href: '/expertise/sustainable-design', desc: 'Eco-friendly architecture for a better tomorrow.' }
   ],
   portfolio: [
     { title: 'Residential', href: '/portfolio?category=residential', desc: 'Bespoke homes and luxury villas.' },

@@ -38,7 +38,7 @@ export default function AboutUsPage() {
           </FadeIn>
           <FadeIn direction="right" className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
             <Image
-              src="/assets/owners.jpeg"
+              src="/assets/team/owners.jpeg"
               alt="Afzal Ali and Shuhood Bin Haris - Founders of D-Arc"
               fill
               className="object-cover"

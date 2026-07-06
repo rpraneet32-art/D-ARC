@@ -32,9 +32,9 @@ const megaMenus = {
     { title: 'Turnkey', href: '/portfolio?category=turnkey', desc: 'End-to-end project execution.' }
   ],
   company: [
-    { title: 'About Us', href: '/company', desc: 'Our legacy and vision.' },
-    { title: 'Experience Centre', href: '/company/experience-centre', desc: 'Visit our Mattannur studio.' },
-    { title: 'Our Team', href: '/company/team', desc: 'Meet the visionaries behind D-Arc.' },
+    { title: 'About Us', href: '/about-us', desc: 'Our legacy and vision.' },
+    { title: 'Experience Centre', href: '/about-us/experience-centre', desc: 'Visit our Mattannur studio.' },
+    { title: 'Our Team', href: '/about-us/team', desc: 'Meet the visionaries behind D-Arc.' },
   ],
   blog: [
     { title: 'Architecture Blog', href: '/blog?category=architecture', desc: 'Insights and trends in architecture.' },
@@ -98,7 +98,7 @@ export function Header() {
 
             {/* Company Tab */}
             <li className="h-full flex items-center relative px-4" onMouseEnter={() => handleMouseEnter('company')}>
-              <Link href="/about-us" className={`text-sm font-medium flex items-center transition-colors ${activeMenu === 'about-us' || pathname === '/company' ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
+              <Link href="/about-us" className={`text-sm font-medium flex items-center transition-colors ${activeMenu === 'about-us' || pathname === '/about-us' ? 'text-brand-gold' : 'text-brand-white hover:text-brand-gold'}`}>
                 Company <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'about-us' ? 'rotate-180' : ''}`} />
               </Link>
             </li>

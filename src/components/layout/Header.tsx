@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, ChevronDown } from 'lucide-react';
+import { MessageCircle, ChevronDown, Menu, X } from 'lucide-react';
 import { Logo } from '../shared/Logo';
 
 // Mega Menu Data
@@ -44,6 +44,7 @@ const megaMenus = {
 
 export function Header() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   let timeoutId: NodeJS.Timeout;
@@ -162,8 +163,37 @@ export function Header() {
             </span>
           </Link>
         </div>
+        
+        {/* Mobile Menu Button */}
+        <button 
+          className="md:hidden text-brand-white p-2" 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
 
       </div>
+
+      {/* Mobile Menu Panel */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-brand-black/95 backdrop-blur-xl border-t border-white/10 overflow-hidden"
+          >
+            <div className="px-4 py-6 space-y-4">
+              <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2 border-b border-white/10">Services</Link>
+              <Link href="/expertise" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2 border-b border-white/10">Expertise</Link>
+              <Link href="/portfolio" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2 border-b border-white/10">Portfolio</Link>
+              <Link href="/about-us" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2 border-b border-white/10">Company</Link>
+              <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2 border-b border-white/10">Blog</Link>
+              <Link href="/contact-us" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-gold font-bold py-2">Get Project Estimate</Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

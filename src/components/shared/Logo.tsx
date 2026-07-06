@@ -3,8 +3,8 @@ import Image from 'next/image';
 export function Logo({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center ${className}`}>
-      {/* Reduced size to 70% of the previous massive state */}
-      <div className="relative w-[300px] h-[85px] -ml-2">
+      {/* Responsive sizing: smaller on mobile, 300px on desktop */}
+      <div className="relative w-[200px] h-[55px] md:w-[300px] md:h-[85px] -ml-2">
         <Image
           src="/assets/logo-from-pdf-processed.png"
           alt="D-Arc Architectural Interior Logo"

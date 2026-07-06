@@ -36,16 +36,23 @@ try:
     # Crop to the tightly found bounding box
     if max_x >= min_x and max_y >= min_y:
         pad = 2
+        
+        # Calculate the original height of the tight bounding box
+        content_height = max_y - min_y
+        
+        # Crop off the bottom 30% of the content which contains the line and "Architectural Interior"
+        new_max_y = min_y + int(content_height * 0.70)
+        
         crop_box = (
             max(0, min_x - pad), 
             max(0, min_y - pad), 
             min(img.width, max_x + pad), 
-            min(img.height, max_y + pad)
+            min(img.height, new_max_y)
         )
         img = img.crop(crop_box)
         
     img.save(output_path, "PNG")
-    print(f"Processed logo saved to {output_path} with bounds ({min_x}, {min_y}) to ({max_x}, {max_y})")
+    print(f"Processed logo saved to {output_path} with bounds ({min_x}, {min_y}) to ({max_x}, {new_max_y})")
 
 except Exception as e:
     print(f"Error processing image: {e}")

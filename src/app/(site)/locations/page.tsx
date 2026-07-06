@@ -1,52 +1,101 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { targetLocations } from "@/data/locations";
-import { Breadcrumb } from "@/components/shared/Breadcrumb";
-import { FAQ } from "@/components/shared/FAQ";
+import { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
+import { FadeIn } from '@/components/animations/FadeIn';
 
 export const metadata: Metadata = {
-  title: "Service Areas | D-Arc Architectural Interiors",
-  description: "D-Arc provides award-winning architecture and interior design services across all major locations in Kannur District.",
-  alternates: {
-    canonical: "/locations-in-kannur",
-  },
+  title: "Service Locations | D-Arc Architectural Interior",
+  description: "D-Arc serves multiple prime locations across the Kannur district including Kannur Town, Taliparamba, Payyanur, Thalassery, and Mattannur.",
 };
 
-export default function LocationsIndexPage() {
+const locations = [
+  {
+    title: "Kannur Town",
+    slug: "architects-and-interior-designers-in-kannur-town",
+    description: "Premium architectural and interior design services in the heart of Kannur.",
+    image: "/assets/projects/modern-residential-architects-kannur.jpeg"
+  },
+  {
+    title: "Taliparamba",
+    slug: "architects-and-interior-designers-in-taliparamba",
+    description: "Bespoke residential and commercial design solutions in Taliparamba.",
+    image: "/assets/projects/architects-kannur-villa.webp"
+  },
+  {
+    title: "Payyanur",
+    slug: "architects-and-interior-designers-in-payyanur",
+    description: "Expert architects and builders serving the Payyanur region.",
+    image: "/assets/projects/interior-designers-kannur-home.webp"
+  },
+  {
+    title: "Thalassery",
+    slug: "architects-and-interior-designers-in-thalassery",
+    description: "Heritage-inspired and contemporary designs for Thalassery homes.",
+    image: "/assets/projects/interior-designers-kannur-office.jpeg"
+  },
+  {
+    title: "Mattannur",
+    slug: "architects-and-interior-designers-in-mattannur",
+    description: "Home to our Experience Centre, serving Mattannur with full turnkey solutions.",
+    image: "/assets/projects/commercial-architects-kannur.jpeg"
+  }
+];
+
+export default function LocationsHubPage() {
   return (
-    <main className="min-h-screen pt-24 pb-20">
-      <div className="container mx-auto px-6">
-        <Breadcrumb />
-        
-        <div className="max-w-4xl mb-16 mt-8">
-          <h1 className="text-4xl md:text-5xl font-serif text-brand-black mb-6">Our Service Locations in Kannur</h1>
-          <div className="w-20 h-1 bg-brand-gold mb-8"></div>
-          <p className="text-xl text-brand-grey leading-relaxed">
-            From the coastal stretches of Payyambalam to the bustling town of Mattannur, D-Arc brings world-class architectural and interior design services to every corner of the district.
-          </p>
+    <div className="flex flex-col w-full bg-brand-black text-brand-white min-h-screen pt-24 pb-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Header Section */}
+        <div className="text-center mb-20">
+          <FadeIn direction="down">
+            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
+              Our Service <span className="text-brand-gold">Locations</span>
+            </h1>
+            <p className="text-brand-grey text-lg max-w-2xl mx-auto">
+              Proudly delivering award-winning architecture and interior design across prime locations in the Kannur district.
+            </p>
+          </FadeIn>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-          {targetLocations.map((loc, index) => (
-            <Link 
-              key={index} 
-              href={`/locations-in-kannur/${loc.slug}`}
-              className="group bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 flex items-center justify-between"
-            >
-              <div>
-                <h3 className="text-xl font-serif text-brand-black group-hover:text-brand-gold transition-colors">
-                  {loc.name}
-                </h3>
-              </div>
-              <svg className="w-5 h-5 text-brand-grey group-hover:text-brand-gold transform group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
+        {/* Locations Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {locations.map((loc, index) => (
+            <FadeIn key={loc.slug} direction="up" delay={index * 0.1}>
+              <Link href={`/locations/${loc.slug}`} className="group block bg-white/5 border border-white/10 rounded-sm overflow-hidden hover:border-brand-gold transition-all duration-300 h-full">
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src={loc.image}
+                    alt={loc.title}
+                    fill
+                    className="object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-brand-black/40 group-hover:bg-brand-black/20 transition-colors" />
+                </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-serif font-bold text-white mb-3 group-hover:text-brand-gold transition-colors">{loc.title}</h3>
+                  <p className="text-brand-grey text-sm mb-6">{loc.description}</p>
+                  
+                  <div className="text-brand-gold text-xs font-bold uppercase tracking-widest group-hover:translate-x-2 transition-transform">
+                    View Area Details →
+                  </div>
+                </div>
+              </Link>
+            </FadeIn>
           ))}
         </div>
+
+        {/* Map / Reach Us */}
+        <FadeIn direction="up" className="mt-24 bg-white/5 border border-white/10 p-12 text-center rounded-sm">
+          <h2 className="text-3xl font-serif font-bold mb-4">Don&apos;t See Your Location?</h2>
+          <p className="text-brand-grey mb-8 max-w-xl mx-auto">
+            We regularly take on specialized projects across Kerala. Contact us to discuss your project requirements regardless of your location.
+          </p>
+          <Link href="/contact-us" className="inline-block border border-brand-gold text-brand-gold font-bold uppercase tracking-widest px-8 py-4 hover:bg-brand-gold hover:text-brand-black transition-colors">
+            Contact Our Team
+          </Link>
+        </FadeIn>
+
       </div>
-      
-      <FAQ />
-    </main>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-
+import { ContactForm } from '@/components/contact/ContactForm';
 export const metadata: Metadata = {
   title: "Contact Us | D-Arc Architectural Interior in Kannur",
   description: "Get in touch with D-Arc Architectural Interior. Visit our Experience Centre in Mattannur, Kannur or contact us for a free estimate.",
@@ -93,46 +93,21 @@ export default function ContactUsPage() {
           {/* Contact Form */}
           <FadeIn direction="right" className="bg-white/5 border border-white/10 p-8 rounded-sm">
             <h2 className="text-2xl font-serif font-bold mb-6">Send Us a Message</h2>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-brand-grey mb-2">Your Name</label>
-                  <input type="text" id="name" className="w-full bg-brand-black border border-white/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="John Doe" />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-brand-grey mb-2">Phone Number</label>
-                  <input type="tel" id="phone" className="w-full bg-brand-black border border-white/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="+91 98765 43210" />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-brand-grey mb-2">Service Interested In</label>
-                <select id="service" className="w-full bg-brand-black border border-white/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors appearance-none">
-                  <option>Architecture Design</option>
-                  <option>Interior Design</option>
-                  <option>Construction</option>
-                  <option>Turnkey Project</option>
-                  <option>Modular Kitchen</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-brand-grey mb-2">Message Details</label>
-                <textarea id="message" rows={4} className="w-full bg-brand-black border border-white/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="Tell us about your project..."></textarea>
-              </div>
-              <button type="button" className="w-full bg-transparent border-2 border-brand-gold text-brand-gold font-bold uppercase tracking-widest px-8 py-4 hover:bg-brand-gold hover:text-brand-black transition-colors">
-                Submit Request
-              </button>
-            </form>
+            <ContactForm />
           </FadeIn>
         </div>
 
-        {/* Map Section */}
         <FadeIn direction="up" className="mt-20 h-[400px] w-full rounded-sm overflow-hidden border border-white/10 relative">
-          <div className="absolute inset-0 bg-brand-black/50 flex items-center justify-center z-10 pointer-events-none">
-            <span className="text-brand-gold font-bold uppercase tracking-widest px-6 py-3 bg-brand-black/90 border border-brand-gold">Interactive Map Coming Soon</span>
-          </div>
-          {/* Placeholder for iframe Google map */}
-          <div className="w-full h-full bg-[#1a1a1a]"></div>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.6262276535567!2d75.5683935!3d11.9310862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba436ebcc7a8a15%3A0xc6ed7e8083818e3!2sMattannur%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen={false} 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-full grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+          ></iframe>
         </FadeIn>
 
       </div>

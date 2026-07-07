@@ -10,18 +10,23 @@ import { Logo } from '../shared/Logo';
 // Mega Menu Data
 const megaMenus = {
   services: [
-    { title: 'Architectural Design', href: '/services/architecture', desc: 'From residential homes to commercial buildings.' },
+    { title: 'Architecture', href: '/services/architecture', desc: 'From residential homes to commercial buildings.' },
     { title: 'Interior Design', href: '/services/interior-design', desc: 'Stunning, functional spaces that reflect your style.' },
     { title: 'Construction', href: '/services/construction', desc: 'Meticulous attention to detail and high-quality materials.' },
     { title: 'Turnkey Projects', href: '/services/turnkey-projects', desc: 'Comprehensive solutions from concept to completion.' },
+    { title: 'Landscape Design', href: '/services/landscape-design', desc: 'Beautiful outdoor spaces and garden environments.' },
     { title: 'Modular Kitchen', href: '/services/modular-kitchen', desc: 'Style + functionality for the heart of your home.' },
-    { title: 'Home Renovation', href: '/services/home-renovation', desc: 'Transforming existing spaces into dream homes.' }
+    { title: 'Home Renovation', href: '/services/home-renovation', desc: 'Transforming existing spaces into dream homes.' },
+    { title: 'Structural Engineering', href: '/services/structural-engineering', desc: 'Safe, sustainable, and robust structural designs.' }
   ],
   expertise: [
     { title: 'Residential Architecture', href: '/expertise/residential-architecture', desc: 'Custom home designs tailored to your lifestyle.' },
     { title: 'Commercial Architecture', href: '/expertise/commercial-architecture', desc: 'Innovative workspaces and retail environments.' },
     { title: 'Luxury Villas', href: '/expertise/luxury-villas', desc: 'High-end bespoke residences with premium finishes.' },
-    { title: 'Sustainable Design', href: '/expertise/sustainable-design', desc: 'Eco-friendly architecture for a better tomorrow.' }
+    { title: 'Modern Homes', href: '/expertise/modern-homes', desc: 'Sleek, minimalist designs for modern living.' },
+    { title: 'Space Planning', href: '/expertise/space-planning', desc: 'Ergonomic and efficient spatial layouts.' },
+    { title: 'Structural Design', href: '/expertise/structural-design', desc: 'Ensuring absolute safety and longevity.' },
+    { title: 'Project Consultation', href: '/expertise/project-consultation', desc: 'Expert guidance for your construction journey.' }
   ],
   portfolio: [
     { title: 'Residential', href: '/portfolio?category=residential', desc: 'Bespoke homes and luxury villas.' },

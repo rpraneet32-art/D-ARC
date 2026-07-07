@@ -155,22 +155,31 @@ export default function Home() {
       {/* 11.5 SEO Content Block */}
       <section className="py-24 bg-brand-white text-brand-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Partner with the Best Residential Architects in Kannur</h2>
-          <div className="space-y-4 text-brand-black/80 text-lg">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-10">Partner with the Best Residential Architects in Kannur</h2>
+          <div className="space-y-8 text-brand-black/80 text-lg leading-relaxed">
             <p>
-              Building your dream home starts with choosing the right design partner. At D-Arc, our experienced Architects in Kannur combine creativity, technical expertise, and over 10 years of industry experience to design exceptional residential and commercial spaces across Kannur District. From luxury villas and custom homes to modern commercial developments, every project is tailored to your vision and lifestyle.
+              Building your dream home starts with choosing the right design partner. At D-Arc, our experienced Architects in Kannur combine creativity, technical expertise, and over 10 years of industry experience to design exceptional residential and commercial spaces across Kannur District. From luxury villas and custom homes to modern commercial developments, every project is tailored to your unique vision and lifestyle. We approach every new design challenge not just as a structural puzzle, but as an opportunity to elevate the daily living experience of our clients.
+            </p>
+            
+            <h3 className="text-2xl font-serif font-bold text-brand-black mt-12 mb-4">Award-Winning Interior Designers in Kannur</h3>
+            <p>
+              As one of the most trusted and sought-after <Link href="/services/interior-design" className="font-medium hover:text-brand-gold transition-colors underline decoration-brand-gold/30 underline-offset-4">Interior Designers in Kannur</Link>, we believe that outstanding architecture deserves equally remarkable interiors. Our interior design team works closely with our structural architects from day one to create elegant, functional spaces. This early collaboration allows us to foresee spatial dynamics, optimize natural light penetration, and ensure that HVAC systems or smart home technologies are discreetly integrated into the structural fabric. 
             </p>
             <p>
-              As one of the trusted <Link href="/services/interior-design" className="font-medium hover:text-brand-gold transition-colors">Interior Designers in Kannur</Link>, we believe that outstanding architecture deserves equally remarkable interiors. Our interior design team works closely with our architects to create elegant, functional spaces through thoughtful space planning, premium materials, bespoke furniture, modular kitchens, and carefully curated finishes that enhance everyday living.
+              We specialize in thoughtful space planning, sourcing premium exotic materials, designing bespoke ergonomic furniture, and building state-of-the-art modular kitchens. Our carefully curated finishes—from book-matched marble floors to acoustic wood paneling—are selected specifically to enhance everyday living while withstanding Kerala’s high humidity and monsoon climate.
+            </p>
+
+            <h3 className="text-2xl font-serif font-bold text-brand-black mt-12 mb-4">A Premier Construction Company in Kannur</h3>
+            <p>
+              Recognized widely as one of the Best Residential Architects in Kannur, D-Arc goes beyond just drafting blueprints. We offer complete architecture, interior design, <Link href="/services/construction" className="font-medium hover:text-brand-gold transition-colors underline decoration-brand-gold/30 underline-offset-4">construction</Link>, home renovation, and turnkey project solutions under one roof. Our integrated design-and-build approach ensures seamless coordination on site, superior craftsmanship, totally transparent communication, and strict adherence to project delivery timelines from concept to completion.
             </p>
             <p>
-              Recognized as one of the Best Residential Architects in Kannur, D-Arc offers complete architecture, interior design, <Link href="/services/construction" className="font-medium hover:text-brand-gold transition-colors">construction</Link>, home renovation, and turnkey project solutions under one roof. Our integrated design-and-build approach ensures seamless coordination, superior craftsmanship, transparent communication, and timely project delivery from concept to completion.
+              Whether you are planning a new luxury villa on the coast, renovating a heritage ancestral home, or developing a high-yield commercial property in the city center, our team provides personalized solutions that reflect your aspirations. As a leading <Link href="/services/construction" className="font-medium hover:text-brand-gold transition-colors underline decoration-brand-gold/30 underline-offset-4">Construction Company in Kannur</Link>, we focus on creating spaces that are timeless in their aesthetics, hyper-functional in their layout, and built with structural integrity that lasts generations. 
             </p>
+
+            <h3 className="text-2xl font-serif font-bold text-brand-black mt-12 mb-4">Experience the D-Arc Difference</h3>
             <p>
-              Whether you’re planning a new luxury villa, renovating your existing home, or developing a commercial property, our team provides personalized solutions that reflect your aspirations while meeting the highest standards of quality and innovation. As a leading <Link href="/services/construction" className="font-medium hover:text-brand-gold transition-colors">Construction Company in Kannur</Link>, we focus on creating spaces that are timeless, functional, and built to last.
-            </p>
-            <p>
-              Visit our Home Experience Centre to explore premium materials, innovative design concepts, and completed project inspirations. Discover why homeowners across Kannur District choose D-Arc as their preferred Architects in Kannur for creating homes that perfectly blend architectural excellence with sophisticated interior design.
+              We invite you to visit our exclusive Home Experience Centre in Mattannur to explore premium materials, innovative design concepts, and completed project inspirations in person. Walk through our mock-ups, feel the textures of our custom cabinetry, and consult directly with our lead designers. Discover exactly why homeowners, corporate leaders, and expatriates across the Kannur District choose D-Arc as their preferred Architects in Kannur for creating spaces that perfectly blend architectural excellence with sophisticated interior design. Let us help you turn your dream into a concrete reality.
             </p>
           </div>
         </div>

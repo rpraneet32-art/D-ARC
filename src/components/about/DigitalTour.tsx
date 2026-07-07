@@ -1,57 +1,75 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
-// Generate array of 1 to 15 image paths
 const tourImages = Array.from({ length: 15 }, (_, i) => `/assets/proj-pics/${i + 1}.jpeg`);
 
 export function DigitalTour() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Track the scroll progress of the container
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % tourImages.length);
-  };
+  // Map the scroll progress (0 to 1) to the image index (0 to 14)
+  const imageIndex = useTransform(scrollYProgress, [0, 1], [0, tourImages.length - 1]);
 
   return (
-    <div className="w-full relative">
-      <div 
-        className="relative w-full min-h-[calc(100vh-6rem)] overflow-hidden cursor-pointer group bg-brand-black"
-        onClick={handleNext}
-      >
-        <AnimatePresence mode="popLayout" initial={false}>
+    // The container height determines how much scrolling is needed (15 images * 100vh = 1500vh)
+    <div ref={containerRef} className="relative w-full h-[1500vh] bg-brand-black">
+      {/* The sticky element that stays in the viewport */}
+      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden">
+        {tourImages.map((src, index) => (
           <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 2 }}
-            transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+            key={index}
             className="absolute inset-0 w-full h-full origin-center"
+            style={{
+              // Show the image only if the current animated index is closest to this index
+              opacity: useTransform(imageIndex, (latest) => (Math.round(latest) === index ? 1 : 0)),
+              scale: useTransform(imageIndex, (latest) => (Math.round(latest) === index ? 1 : 1.1)),
+            }}
+            transition={{ duration: 0.3 }}
           >
             <Image
-              src={tourImages[currentIndex]}
-              alt={`Space ${currentIndex + 1} of 15`}
+              src={src}
+              alt={`Experience Centre View ${index + 1}`}
               fill
               className="object-cover"
-              priority={currentIndex === 0 || currentIndex === 1} // Preload first two
+              priority={index < 3} // Preload first few
             />
           </motion.div>
-        </AnimatePresence>
+        ))}
 
         {/* Subtle Dark Gradient Overlay for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
         
         {/* Progress Indicator */}
-        <div className="absolute top-0 left-0 right-0 flex gap-1 pointer-events-none z-10 h-1 bg-black/20">
+        <div className="absolute top-[80px] left-0 right-0 flex gap-1 pointer-events-none z-10 h-1 bg-black/20 px-4">
           {tourImages.map((_, idx) => (
-            <div 
+            <motion.div 
               key={idx} 
-              className={`h-full flex-1 transition-all duration-700 ${
-                idx <= currentIndex ? 'bg-brand-gold' : 'bg-transparent'
-              }`} 
+              className="h-full flex-1 bg-brand-gold"
+              style={{
+                opacity: useTransform(imageIndex, (latest) => (latest >= idx ? 1 : 0.2))
+              }}
             />
           ))}
+        </div>
+
+        {/* Scroll Instruction Overlay */}
+        <div className="absolute bottom-10 left-0 w-full text-center z-20 pointer-events-none flex flex-col items-center justify-center">
+          <motion.div 
+            animate={{ y: [0, 10, 0] }} 
+            transition={{ repeat: Infinity, duration: 2 }}
+            className="text-brand-gold mb-2"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+          </motion.div>
+          <span className="text-white text-sm uppercase tracking-widest drop-shadow-md">Scroll to explore</span>
         </div>
       </div>
     </div>

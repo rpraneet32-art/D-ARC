@@ -51,10 +51,10 @@ export function Footer() {
           <div>
             <h4 className="text-brand-white font-serif font-bold text-lg mb-4">Coverage Area</h4>
             <ul className="space-y-3">
-              <li><Link href="/service-areas/kannur-town" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Kannur Town</Link></li>
-              <li><Link href="/service-areas/taliparamba" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Taliparamba</Link></li>
-              <li><Link href="/service-areas/mattannur" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Mattannur</Link></li>
-              <li><Link href="/service-areas" className="text-brand-gold hover:text-white transition-colors text-sm font-medium">View all locations &rarr;</Link></li>
+              <li><Link href="/locations/kannur" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Kannur Town</Link></li>
+              <li><Link href="/locations/taliparamba" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Taliparamba</Link></li>
+              <li><Link href="/locations/mattannur" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Mattannur</Link></li>
+              <li><Link href="/contact-us" className="text-brand-gold hover:text-white transition-colors text-sm font-medium">View all locations &rarr;</Link></li>
             </ul>
           </div>
         </div>

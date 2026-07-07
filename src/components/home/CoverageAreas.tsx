@@ -5,7 +5,18 @@ import { LOCATIONS_QUERY } from "@/sanity/lib/queries";
 
 export async function CoverageAreas() {
   const locationDocs = await client.fetch<any[]>(LOCATIONS_QUERY);
-  const locations = locationDocs.map(doc => doc.name);
+  // Default fallback locations in case Sanity is unreachable
+  const locations = locationDocs && locationDocs.length > 0 
+    ? locationDocs 
+    : [
+        { name: "Kannur", slug: { current: "kannur" } },
+        { name: "Taliparamba", slug: { current: "taliparamba" } },
+        { name: "Thalassery", slug: { current: "thalassery" } },
+        { name: "Mattannur", slug: { current: "mattannur" } },
+        { name: "Payyanur", slug: { current: "payyanur" } },
+        { name: "Kasaragod", slug: { current: "kasaragod" } },
+        { name: "Wayanad", slug: { current: "wayanad" } }
+      ];
   
   return (
     <section className="py-32 bg-white border-t border-gray-100">
@@ -22,10 +33,14 @@ export async function CoverageAreas() {
               While our primary market is the Kannur District, our footprint extends across major secondary markets. We bring D-Arc's signature engineering excellence directly to your site, wherever it may be.
             </p>
             <div className="flex flex-wrap gap-3">
-              {locations.map((loc, idx) => (
-                <span key={idx} className="px-4 py-2 border border-gray-200 text-brand-grey text-sm rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors cursor-default">
-                  {loc}
-                </span>
+              {locations.map((loc: any, idx: number) => (
+                <Link 
+                  key={idx} 
+                  href={`/locations/${loc.slug?.current || loc.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="px-4 py-2 border border-gray-200 text-brand-grey text-sm rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors"
+                >
+                  {loc.name}
+                </Link>
               ))}
             </div>
             <div className="mt-12">
@@ -39,21 +54,50 @@ export async function CoverageAreas() {
           </FadeIn>
           
           <FadeIn direction="left" className="relative h-[600px] bg-[#FAFAFA] rounded-sm flex items-center justify-center overflow-hidden border border-gray-100">
-            {/* An SVG abstract map representation */}
-            <svg viewBox="0 0 400 600" className="w-full h-full text-brand-gold/10 p-12">
-              <path fill="currentColor" d="M150 50 Q200 20 250 80 T350 150 Q380 250 300 350 T200 500 Q150 550 100 450 T50 250 Q20 150 150 50 Z" />
-              {/* Markers */}
-              <circle cx="200" cy="180" r="6" fill="#D4AF37" className="animate-pulse" />
-              <text x="215" y="185" fill="#111" fontSize="14" fontWeight="bold">Kannur</text>
+            {/* An SVG abstract map representation of Northern Kerala */}
+            <svg viewBox="0 0 400 600" className="w-full h-full text-brand-gold/10 p-8">
+              <path fill="currentColor" d="M150 20 Q220 10 280 60 T360 200 Q390 350 320 450 T200 580 Q100 550 60 400 T40 150 Q100 50 150 20 Z" />
               
-              <circle cx="250" cy="130" r="4" fill="#111" />
-              <text x="260" y="134" fill="#666" fontSize="12">Taliparamba</text>
+              {/* Markers */}
+              {/* Kasaragod (Northmost) */}
+              <circle cx="150" cy="80" r="4" fill="#111" />
+              <text x="160" y="84" fill="#666" fontSize="12">Kasaragod</text>
 
-              <circle cx="150" cy="220" r="4" fill="#111" />
-              <text x="90" y="224" fill="#666" fontSize="12">Thalassery</text>
+              {/* Payyanur */}
+              <circle cx="200" cy="140" r="4" fill="#111" />
+              <text x="210" y="144" fill="#666" fontSize="12">Payyanur</text>
 
-              <circle cx="280" cy="250" r="4" fill="#111" />
-              <text x="290" y="254" fill="#666" fontSize="12">Mattannur</text>
+              {/* Taliparamba */}
+              <circle cx="230" cy="190" r="4" fill="#111" />
+              <text x="240" y="194" fill="#666" fontSize="12">Taliparamba</text>
+
+              {/* Kannur (Main Hub) */}
+              <circle cx="180" cy="240" r="6" fill="#D4AF37" className="animate-pulse" />
+              <text x="195" y="245" fill="#111" fontSize="14" fontWeight="bold">Kannur</text>
+              
+              {/* Mattannur (East of Kannur) */}
+              <circle cx="280" cy="260" r="4" fill="#111" />
+              <text x="290" y="264" fill="#666" fontSize="12">Mattannur</text>
+
+              {/* Thalassery (South of Kannur) */}
+              <circle cx="160" cy="300" r="4" fill="#111" />
+              <text x="100" y="304" fill="#666" fontSize="12">Thalassery</text>
+              
+              {/* Mahe */}
+              <circle cx="170" cy="330" r="4" fill="#111" />
+              <text x="180" y="334" fill="#666" fontSize="12">Mahe</text>
+
+              {/* Vadakara */}
+              <circle cx="185" cy="380" r="4" fill="#111" />
+              <text x="195" y="384" fill="#666" fontSize="12">Vadakara</text>
+
+              {/* Kozhikode (Southmost in this view) */}
+              <circle cx="210" cy="450" r="4" fill="#111" />
+              <text x="220" y="454" fill="#666" fontSize="12">Kozhikode</text>
+
+              {/* Wayanad (East/Inland) */}
+              <circle cx="310" cy="380" r="4" fill="#111" />
+              <text x="320" y="384" fill="#666" fontSize="12">Wayanad</text>
             </svg>
           </FadeIn>
         </div>

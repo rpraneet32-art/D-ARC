@@ -71,6 +71,8 @@ export default async function ExpertiseDetailPage({ params }: Props) {
     notFound();
   }
 
+  const slugString = item.slug?.current || item.slug;
+
   return (
     <main className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-6">

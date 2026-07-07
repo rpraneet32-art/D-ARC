@@ -127,7 +127,7 @@ export default function ContactUsPage() {
           </FadeIn>
           <FadeIn direction="right" className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
             <Image
-              src="/assets/contact/contact-architects-kannur.jpg"
+              src="/assets/contact/contact-architects-kannur.png"
               alt="Client consultation meeting to Contact Architects in Kannur at D-Arc Studio"
               fill
               className="object-cover"
@@ -151,7 +151,7 @@ export default function ContactUsPage() {
           </FadeIn>
           <FadeIn direction="left" className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
             <Image
-              src="/assets/contact/hire-interior-designers-kannur.jpg"
+              src="/assets/contact/hire-interior-designers-kannur.png"
               alt="Top reasons to Hire Interior Designers Kannur showcasing a beautifully executed luxury bedroom"
               fill
               className="object-cover"
@@ -175,7 +175,7 @@ export default function ContactUsPage() {
           </FadeIn>
           <FadeIn direction="right" className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
             <Image
-              src="/assets/contact/transparent-communication-darc.jpg"
+              src="/assets/contact/transparent-communication-darc.png"
               alt="Project manager updating a client on site progress after they chose to Contact Architects in Kannur"
               fill
               className="object-cover"
@@ -187,3 +187,4 @@ export default function ContactUsPage() {
     </div>
   );
 }
+

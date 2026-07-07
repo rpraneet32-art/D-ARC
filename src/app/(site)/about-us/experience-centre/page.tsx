@@ -49,7 +49,7 @@ export default function ExperienceCentrePage() {
             </FadeIn>
             <FadeIn direction="right" className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
               <Image
-                src="/assets/experience/material-library-kannur.jpg"
+                src="/assets/experience/material-library-kannur.png"
                 alt="Extensive material library featuring premium wood, marble, and laminates at our Architecture Showroom in Kannur"
                 fill
                 className="object-cover"
@@ -73,7 +73,7 @@ export default function ExperienceCentrePage() {
             </FadeIn>
             <FadeIn direction="left" className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
               <Image
-                src="/assets/experience/modular-kitchen-display.jpg"
+                src="/assets/experience/modular-kitchen-display.png"
                 alt="Fully functional premium modular kitchen display with island counter at the Interior Design Experience Centre Kerala"
                 fill
                 className="object-cover"
@@ -97,7 +97,7 @@ export default function ExperienceCentrePage() {
             </FadeIn>
             <FadeIn direction="right" className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
               <Image
-                src="/assets/experience/furniture-lighting-gallery.jpg"
+                src="/assets/experience/furniture-lighting-gallery.png"
                 alt="Bespoke furniture setups and automated lighting pods inside the D-Arc Architecture Showroom Kannur"
                 fill
                 className="object-cover"
@@ -123,3 +123,4 @@ export default function ExperienceCentrePage() {
     </div>
   );
 }
+

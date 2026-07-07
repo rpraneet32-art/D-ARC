@@ -70,7 +70,7 @@ export default function AboutUsPage() {
           </FadeIn>
           <FadeIn direction="left" className="relative h-[600px] w-full rounded-sm overflow-hidden shadow-2xl">
             <Image
-              src="/assets/about/design-philosophy-kerala.jpg"
+              src="/assets/about/design-philosophy-kerala.png"
               alt="Interior design sketches and material mood boards by Top Interior Design Company Kerala"
               fill
               className="object-cover"
@@ -121,7 +121,7 @@ export default function AboutUsPage() {
           </FadeIn>
           <FadeIn direction="right" className="relative h-[600px] w-full rounded-sm overflow-hidden shadow-2xl">
             <Image
-              src="/assets/about/sustainable-architecture-kannur.jpg"
+              src="/assets/about/sustainable-architecture-kannur.png"
               alt="Sustainable and eco-friendly architectural models built by the Best Architecture Firm in Kannur"
               fill
               className="object-cover"
@@ -133,3 +133,4 @@ export default function AboutUsPage() {
     </div>
   );
 }
+

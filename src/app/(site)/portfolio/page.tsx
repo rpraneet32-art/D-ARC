@@ -85,7 +85,7 @@ export default async function PortfolioPage() {
           </FadeIn>
           <FadeIn direction="right" className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
             <Image
-              src="/assets/portfolio/best-architecture-portfolio-kannur.jpg"
+              src="/assets/portfolio/best-architecture-portfolio-kannur.png"
               alt="Exterior view of a tropical modern villa from the Best Architecture Portfolio Kannur by D-Arc"
               fill
               className="object-cover"
@@ -109,7 +109,7 @@ export default async function PortfolioPage() {
           </FadeIn>
           <FadeIn direction="left" className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
             <Image
-              src="/assets/portfolio/luxury-interior-design-projects.jpg"
+              src="/assets/portfolio/luxury-interior-design-projects.png"
               alt="Elegant living room interior showcasing bespoke furniture from our Luxury Interior Design Projects"
               fill
               className="object-cover"
@@ -133,7 +133,7 @@ export default async function PortfolioPage() {
           </FadeIn>
           <FadeIn direction="right" className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
             <Image
-              src="/assets/portfolio/d-arc-standard-kerala.jpg"
+              src="/assets/portfolio/d-arc-standard-kerala.png"
               alt="Architects reviewing blueprints on site for our Luxury Interior Design Projects"
               fill
               className="object-cover"
@@ -145,3 +145,4 @@ export default async function PortfolioPage() {
     </div>
   );
 }
+

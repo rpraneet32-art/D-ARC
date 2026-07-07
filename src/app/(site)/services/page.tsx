@@ -109,7 +109,7 @@ export default function ServicesHubPage() {
           </FadeIn>
           <FadeIn direction="right" className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
             <Image
-              src="/assets/services/construction-services-kannur.jpg"
+              src="/assets/services/construction-services-kannur.png"
               alt="Engineers overseeing a large residential build site for Construction Services Kannur"
               fill
               className="object-cover"
@@ -133,7 +133,7 @@ export default function ServicesHubPage() {
           </FadeIn>
           <FadeIn direction="left" className="relative h-[500px] w-full rounded-sm overflow-hidden shadow-2xl">
             <Image
-              src="/assets/services/turnkey-building-contractors-kerala.jpg"
+              src="/assets/services/turnkey-building-contractors-kerala.png"
               alt="Completed turnkey luxury project showcasing seamless interior and exterior transition by Building Contractors Kerala"
               fill
               className="object-cover"
@@ -158,3 +158,4 @@ export default function ServicesHubPage() {
     </div>
   );
 }
+

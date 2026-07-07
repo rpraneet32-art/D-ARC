@@ -29,19 +29,37 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (desc.length < 150) desc += " Let us build your vision.";
     if (desc.length > 160) desc = desc.substring(0, 157) + "...";
 
+    const keywordMap: Record<string, string[]> = {
+      'kannur-town': ['Architects in Kannur Town', 'Interior Designers in Kannur Town', 'Builders in Kannur Town'],
+      'kannur-city': ['Architects in Kannur City', 'Interior Designers in Kannur City', 'Construction Company Kannur City'],
+      'taliparamba': ['Architects in Taliparamba', 'Interior Designers in Taliparamba', 'Turnkey Builders Taliparamba'],
+      'thalassery': ['Architects in Thalassery', 'Interior Designers in Thalassery', 'Heritage Architecture Thalassery'],
+      'pazhayangadi': ['Architects in Pazhayangadi', 'Construction Company Pazhayangadi'],
+      'mattool': ['Architects in Mattool', 'Waterfront Villa Designers Mattool'],
+      'mattannur': ['Architects in Mattannur', 'Builders in Mattannur', 'Interior Designers Mattannur'],
+      'chakkarakkal': ['Architects in Chakkarakkal', 'Home Builders Chakkarakkal'],
+      'iritty': ['Architects in Iritty', 'Construction Contractors Iritty'],
+      'irikkur': ['Architects in Irikkur', 'Residential Builders Irikkur'],
+      'sreekandapuram': ['Architects in Sreekandapuram', 'Interior Designers Sreekandapuram'],
+      'panoor': ['Architects in Panoor', 'Luxury Home Builders Panoor'],
+      'nadapuram': ['Architects in Nadapuram', 'Villa Designers Nadapuram'],
+      'vadakara': ['Architects in Vadakara', 'Builders in Vadakara', 'Interior Designers Vadakara']
+    };
+
+    const specificKeywords = keywordMap[location.slug] || [
+      `Architects in ${location.name}`,
+      `Interior Designers in ${location.name}`,
+      `Builders in ${location.name}`
+    ];
+
     return {
       title: `Architects in ${location.name} | Interior Designers | D-Arc`,
       description: desc,
-    keywords: [
-      `Architects in ${location.name}`,
-      `Interior Designers in ${location.name}`,
-      `Builders in ${location.name}`,
-      `Construction Company in ${location.name}`
-    ],
-    alternates: {
-      canonical: `/locations/${location.slug}`,
-    },
-  };
+      keywords: specificKeywords,
+      alternates: {
+        canonical: `/locations/${location.slug}`,
+      },
+    };
 }
 
 export default async function LocationPage({ params }: Props) {

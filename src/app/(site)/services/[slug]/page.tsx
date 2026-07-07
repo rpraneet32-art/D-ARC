@@ -34,12 +34,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const slugString = service.slug?.current || service.slug;
+
+  const keywordMap: Record<string, string[]> = {
+    'architecture': ['Residential Architects Kannur', 'Commercial Architecture Kerala'],
+    'interior-design': ['Home Interior Designers Kannur', 'Custom Furniture Kannur'],
+    'construction': ['Best Builders in Kannur', 'Turnkey Construction Projects'],
+    'turnkey-projects': ['Turnkey Builders Kerala', 'End-to-End Construction Kannur'],
+    'landscape-design': ['Landscape Architects Kannur', 'Garden Design Kerala'],
+    'modular-kitchen': ['Modular Kitchen Designers Kannur', 'Premium Kitchens Kerala'],
+    'home-renovation': ['Home Renovation Contractors Kannur', 'House Remodeling Kerala'],
+    'structural-engineering': ['Structural Engineers Kannur', 'Safe Building Design Kerala']
+  };
+
+  const specificKeywords = keywordMap[slugString] || [`${service.title} Kannur`, `Best ${service.title} Kerala`, "D-Arc Services", "Interior Architecture"];
+
   return {
     title: `${service.title} | D-Arc Architectural Interiors Kannur`,
     description: service.shortDescription,
-    keywords: [`${service.title} Kannur`, `Best ${service.title} Kerala`, "D-Arc Services", "Interior Architecture", "Luxury Residential Architects"],
+    keywords: [...specificKeywords, "Luxury Residential Architects"],
     alternates: {
-      canonical: `/services/${service.slug?.current || service.slug}`,
+      canonical: `/services/${slugString}`,
     },
   };
 }

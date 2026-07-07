@@ -33,12 +33,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const slugString = item.slug?.current || item.slug;
+
+  const keywordMap: Record<string, string[]> = {
+    'residential-architecture': ['Residential Architects Kannur', 'Custom Home Architecture'],
+    'commercial-architecture': ['Commercial Architects Kannur', 'Office Interior Designers'],
+    'luxury-villas': ['Luxury Villa Architects Kerala', 'Premium Villa Construction Kannur'],
+    'modern-homes': ['Modern Home Architects Kannur', 'Minimalist Architecture Kerala'],
+    'space-planning': ['Space Planning Experts Kannur', 'Ergonomic Interior Layouts'],
+    'structural-design': ['Building Structural Designers', 'Safe Construction Practices'],
+    'project-consultation': ['Architectural Consultation Kannur', 'Building Project Management']
+  };
+
+  const specificKeywords = keywordMap[slugString] || [`${item.title} Kannur`, `Best ${item.title} Kerala`, "D-Arc Expertise"];
+
   return {
     title: `${item.title} | D-Arc Architectural Interiors`,
     description: item.shortDescription,
-    keywords: [`${item.title} Kannur`, `Best ${item.title} Kerala`, "D-Arc Expertise", "Architecture Specialists"],
+    keywords: [...specificKeywords, "Architecture Specialists"],
     alternates: {
-      canonical: `/expertise/${item.slug?.current || item.slug}`,
+      canonical: `/expertise/${slugString}`,
     },
   };
 }

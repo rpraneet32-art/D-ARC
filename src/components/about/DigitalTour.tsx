@@ -19,8 +19,8 @@ export function DigitalTour() {
   const imageIndex = useTransform(scrollYProgress, [0, 1], [0, tourImages.length - 1]);
 
   return (
-    // The container height determines how much scrolling is needed (15 images * 100vh = 1500vh)
-    <div ref={containerRef} className="relative w-full h-[1500vh] bg-brand-black">
+    // The container height determines how much scrolling is needed (Reduced from 1500vh to 400vh for much faster scrolling)
+    <div ref={containerRef} className="relative w-full h-[400vh] bg-brand-black">
       {/* The sticky element that stays in the viewport */}
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden">
         {tourImages.map((src, index) => (
@@ -28,9 +28,10 @@ export function DigitalTour() {
             key={index}
             className="absolute inset-0 w-full h-full origin-center"
             style={{
-              // Show the image only if the current animated index is closest to this index
-              opacity: useTransform(imageIndex, (latest) => (Math.round(latest) === index ? 1 : 0)),
-              scale: useTransform(imageIndex, (latest) => (Math.round(latest) === index ? 1 : 1.1)),
+              // Continuous cross-fading: fades in from 0 to 1, then out to 0
+              opacity: useTransform(imageIndex, [index - 1, index, index + 1], [0, 1, 0]),
+              // Parallax scale effect: scales down continuously as user scrolls past it
+              scale: useTransform(imageIndex, [index - 1, index, index + 1], [1.1, 1, 0.95]),
             }}
             transition={{ duration: 0.3 }}
           >

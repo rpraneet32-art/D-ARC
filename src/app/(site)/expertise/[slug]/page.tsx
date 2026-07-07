@@ -88,18 +88,45 @@ export default async function ExpertiseDetailPage({ params }: Props) {
           
           <div className="mb-10 w-full h-[400px] relative rounded-xl overflow-hidden shadow-md">
             <Image
-              src={item.slug.includes('commercial') ? "/assets/interior/premium-commercial.png" : (item.slug.includes('villa') ? "/assets/projects/modern-villa.png" : "/assets/interior/premium-residential.png")}
-              alt={`${item.title} by D-Arc in Kannur`}
+              src={item.image1 || `/assets/expertise/${slugString}-1.png`}
+              alt={`${item.title} primary image by D-Arc in Kannur`}
               fill
               className="object-cover"
             />
           </div>
 
-          <p className="text-lg md:text-xl text-brand-grey leading-relaxed">
-            {item.content}
-          </p>
+          <div className="text-lg text-brand-grey leading-relaxed space-y-6 mb-12">
+            {/* Split content if it is a single large block, or use part1 if available */}
+            <p>{item.contentPart1 || item.content}</p>
+          </div>
+
+          <div className="mb-10 w-full h-[400px] relative rounded-xl overflow-hidden shadow-md">
+            <Image
+              src={item.image2 || `/assets/expertise/${slugString}-2.png`}
+              alt={`${item.title} secondary image by D-Arc in Kannur`}
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="text-lg text-brand-grey leading-relaxed space-y-6 mb-12">
+            <p>{item.contentPart2}</p>
+          </div>
+
+          <div className="mb-10 w-full h-[400px] relative rounded-xl overflow-hidden shadow-md">
+            <Image
+              src={item.image3 || `/assets/expertise/${slugString}-3.png`}
+              alt={`${item.title} detail image by D-Arc in Kannur`}
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="text-lg text-brand-grey leading-relaxed space-y-6">
+            <p>{item.contentPart3}</p>
+          </div>
           
-          <div className="mt-12 pt-8 border-t border-gray-100">
+          <div className="mt-16 pt-8 border-t border-gray-100">
             <h3 className="text-2xl font-serif text-brand-black mb-4">Discuss your specific requirements</h3>
             <Link href="/contact-us" className="inline-block bg-brand-black text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-brand-gold transition-colors">
               Contact Our Experts

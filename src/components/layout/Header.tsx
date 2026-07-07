@@ -183,12 +183,47 @@ export function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-brand-black/95 backdrop-blur-xl border-t border-white/10 overflow-hidden"
           >
-            <div className="px-4 py-6 space-y-4">
-              <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2 border-b border-white/10">Services</Link>
-              <Link href="/expertise" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2 border-b border-white/10">Expertise</Link>
-              <Link href="/portfolio" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2 border-b border-white/10">Portfolio</Link>
-              <Link href="/about-us" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2 border-b border-white/10">Company</Link>
-              <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2 border-b border-white/10">Blog</Link>
+            <div className="px-4 py-6 space-y-4 overflow-y-auto max-h-[70vh]">
+              <div className="border-b border-white/10 pb-2">
+                <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2">Services</Link>
+                <div className="pl-4 space-y-3 mt-2 mb-2 border-l border-white/10">
+                  {megaMenus.services.map((item, idx) => (
+                    <Link key={idx} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-grey text-sm hover:text-brand-gold">{item.title}</Link>
+                  ))}
+                </div>
+              </div>
+              <div className="border-b border-white/10 pb-2">
+                <Link href="/expertise" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2">Expertise</Link>
+                <div className="pl-4 space-y-3 mt-2 mb-2 border-l border-white/10">
+                  {megaMenus.expertise.map((item, idx) => (
+                    <Link key={idx} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-grey text-sm hover:text-brand-gold">{item.title}</Link>
+                  ))}
+                </div>
+              </div>
+              <div className="border-b border-white/10 pb-2">
+                <Link href="/portfolio" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2">Portfolio</Link>
+                <div className="pl-4 space-y-3 mt-2 mb-2 border-l border-white/10">
+                  {megaMenus.portfolio.map((item, idx) => (
+                    <Link key={idx} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-grey text-sm hover:text-brand-gold">{item.title}</Link>
+                  ))}
+                </div>
+              </div>
+              <div className="border-b border-white/10 pb-2">
+                <Link href="/about-us" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2">Company</Link>
+                <div className="pl-4 space-y-3 mt-2 mb-2 border-l border-white/10">
+                  {megaMenus.company.map((item, idx) => (
+                    <Link key={idx} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-grey text-sm hover:text-brand-gold">{item.title}</Link>
+                  ))}
+                </div>
+              </div>
+              <div className="border-b border-white/10 pb-2">
+                <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-white font-medium hover:text-brand-gold py-2">Blog</Link>
+                <div className="pl-4 space-y-3 mt-2 mb-2 border-l border-white/10">
+                  {megaMenus.blog.map((item, idx) => (
+                    <Link key={idx} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-grey text-sm hover:text-brand-gold">{item.title}</Link>
+                  ))}
+                </div>
+              </div>
               <Link href="/contact-us" onClick={() => setIsMobileMenuOpen(false)} className="block text-brand-gold font-bold py-2">Get Project Estimate</Link>
             </div>
           </motion.div>

@@ -50,12 +50,22 @@ export function Footer() {
 
           <div>
             <h4 className="text-brand-white font-serif font-bold text-lg mb-4">Coverage Area</h4>
-            <ul className="space-y-3">
-              <li><Link href="/locations/kannur" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Kannur Town</Link></li>
-              <li><Link href="/locations/taliparamba" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Taliparamba</Link></li>
-              <li><Link href="/locations/mattannur" className="text-brand-grey hover:text-brand-gold transition-colors text-sm">Mattannur</Link></li>
-              <li><Link href="/contact-us" className="text-brand-gold hover:text-white transition-colors text-sm font-medium">View all locations &rarr;</Link></li>
-            </ul>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+              <Link href="/locations/kannur-district" className="text-brand-grey hover:text-brand-gold transition-colors text-xs col-span-2 font-bold mb-1">Kannur District</Link>
+              <Link href="/locations/kannur-town" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Kannur Town</Link>
+              <Link href="/locations/kannur-city" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Kannur City</Link>
+              <Link href="/locations/taliparamba" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Taliparamba</Link>
+              <Link href="/locations/pazhayangadi" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Pazhayangadi</Link>
+              <Link href="/locations/mattool" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Mattool</Link>
+              <Link href="/locations/mattannur" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Mattannur</Link>
+              <Link href="/locations/chakkarakkal" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Chakkarakkal</Link>
+              <Link href="/locations/iritty" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Iritty</Link>
+              <Link href="/locations/irikkur" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Irikkur</Link>
+              <Link href="/locations/sreekandapuram" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Sreekandapuram</Link>
+              <Link href="/locations/panoor" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Panoor</Link>
+              <Link href="/locations/nadapuram" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Nadapuram</Link>
+              <Link href="/locations/vadakara" className="text-brand-grey hover:text-brand-gold transition-colors text-xs">Vadakara</Link>
+            </div>
           </div>
         </div>
 

@@ -58,46 +58,45 @@ export async function CoverageAreas() {
             <svg viewBox="0 0 400 600" className="w-full h-full text-brand-gold/10 p-8">
               <path fill="currentColor" d="M150 20 Q220 10 280 60 T360 200 Q390 350 320 450 T200 580 Q100 550 60 400 T40 150 Q100 50 150 20 Z" />
               
-              {/* Markers */}
-              {/* Kasaragod (Northmost) */}
-              <circle cx="150" cy="80" r="4" fill="#111" />
-              <text x="160" y="84" fill="#666" fontSize="12">Kasaragod</text>
-
-              {/* Payyanur */}
-              <circle cx="200" cy="140" r="4" fill="#111" />
-              <text x="210" y="144" fill="#666" fontSize="12">Payyanur</text>
-
-              {/* Taliparamba */}
-              <circle cx="230" cy="190" r="4" fill="#111" />
-              <text x="240" y="194" fill="#666" fontSize="12">Taliparamba</text>
-
-              {/* Kannur (Main Hub) */}
-              <circle cx="180" cy="240" r="6" fill="#D4AF37" className="animate-pulse" />
-              <text x="195" y="245" fill="#111" fontSize="14" fontWeight="bold">Kannur</text>
+              {/* Markers for PRD Locations */}
               
-              {/* Mattannur (East of Kannur) */}
+              <circle cx="210" cy="90" r="4" fill="#111" />
+              <text x="220" y="94" fill="#666" fontSize="12">Pazhayangadi</text>
+
+              <circle cx="180" cy="110" r="4" fill="#111" />
+              <text x="120" y="114" fill="#666" fontSize="12">Mattool</text>
+
+              <circle cx="230" cy="140" r="4" fill="#111" />
+              <text x="240" y="144" fill="#666" fontSize="12">Taliparamba</text>
+
+              <circle cx="270" cy="150" r="4" fill="#111" />
+              <text x="280" y="154" fill="#666" fontSize="12">Sreekandapuram</text>
+
+              <circle cx="260" cy="190" r="4" fill="#111" />
+              <text x="270" y="194" fill="#666" fontSize="12">Irikkur</text>
+
+              <circle cx="310" cy="220" r="4" fill="#111" />
+              <text x="320" y="224" fill="#666" fontSize="12">Iritty</text>
+
               <circle cx="280" cy="260" r="4" fill="#111" />
               <text x="290" y="264" fill="#666" fontSize="12">Mattannur</text>
 
-              {/* Thalassery (South of Kannur) */}
-              <circle cx="160" cy="300" r="4" fill="#111" />
-              <text x="100" y="304" fill="#666" fontSize="12">Thalassery</text>
+              {/* Kannur District (Main Hub) */}
+              <circle cx="180" cy="240" r="6" fill="#D4AF37" className="animate-pulse" />
+              <text x="110" y="235" fill="#111" fontSize="14" fontWeight="bold">Kannur City</text>
+              <text x="100" y="255" fill="#111" fontSize="14" fontWeight="bold">Kannur Town</text>
               
-              {/* Mahe */}
-              <circle cx="170" cy="330" r="4" fill="#111" />
-              <text x="180" y="334" fill="#666" fontSize="12">Mahe</text>
+              <circle cx="220" cy="280" r="4" fill="#111" />
+              <text x="230" y="284" fill="#666" fontSize="12">Chakkarakkal</text>
 
-              {/* Vadakara */}
-              <circle cx="185" cy="380" r="4" fill="#111" />
-              <text x="195" y="384" fill="#666" fontSize="12">Vadakara</text>
+              <circle cx="190" cy="340" r="4" fill="#111" />
+              <text x="200" y="344" fill="#666" fontSize="12">Panoor</text>
 
-              {/* Kozhikode (Southmost in this view) */}
-              <circle cx="210" cy="450" r="4" fill="#111" />
-              <text x="220" y="454" fill="#666" fontSize="12">Kozhikode</text>
+              <circle cx="170" cy="390" r="4" fill="#111" />
+              <text x="180" y="394" fill="#666" fontSize="12">Nadapuram</text>
 
-              {/* Wayanad (East/Inland) */}
-              <circle cx="310" cy="380" r="4" fill="#111" />
-              <text x="320" y="384" fill="#666" fontSize="12">Wayanad</text>
+              <circle cx="160" cy="440" r="4" fill="#111" />
+              <text x="170" y="444" fill="#666" fontSize="12">Vadakara</text>
             </svg>
           </FadeIn>
         </div>

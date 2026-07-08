@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
 import { expertise as staticExpertises } from "@/data/expertise";
+import { getSeoOverride } from "@/actions/seo-editor";
 
 export async function generateStaticParams() {
   const sanityExpertises = await client.fetch<any[]>(EXPERTISE_QUERY);
@@ -34,6 +35,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const slugString = item.slug?.current || item.slug;
+  const targetPath = `/expertise/${slugString}`;
+
+  const override = await getSeoOverride(targetPath);
+  if (override) {
+    return {
+      title: override.title,
+      description: override.description,
+      keywords: override.keywords,
+      alternates: { canonical: targetPath },
+    };
+  }
 
   const keywordMap: Record<string, string[]> = {
     'residential-architecture': ['Residential Architects Kannur', 'Custom Home Architecture'],
@@ -52,7 +64,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: item.shortDescription,
     keywords: [...specificKeywords, "Architecture Specialists"],
     alternates: {
-      canonical: `/expertise/${slugString}`,
+      canonical: targetPath,
     },
   };
 }

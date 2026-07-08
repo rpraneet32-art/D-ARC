@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
 import { services as staticServices } from "@/data/services";
+import { getSeoOverride } from "@/actions/seo-editor";
 
 export async function generateStaticParams() {
   const sanityServices = await client.fetch<any[]>(SERVICES_QUERY);
@@ -35,6 +36,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const slugString = service.slug?.current || service.slug;
+  const targetPath = `/services/${slugString}`;
+
+  const override = await getSeoOverride(targetPath);
+  if (override) {
+    return {
+      title: override.title,
+      description: override.description,
+      keywords: override.keywords,
+      alternates: { canonical: targetPath },
+    };
+  }
 
   const keywordMap: Record<string, string[]> = {
     'architecture': ['Residential Architects Kannur', 'Commercial Architecture Kerala'],
@@ -54,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: service.shortDescription,
     keywords: [...specificKeywords, "Luxury Residential Architects"],
     alternates: {
-      canonical: `/services/${slugString}`,
+      canonical: targetPath,
     },
   };
 }

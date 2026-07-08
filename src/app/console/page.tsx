@@ -3,12 +3,47 @@
 import { useState } from "react";
 import { calculateSeoScore, SeoPageData, SeoMetrics } from "@/lib/seo-scorer";
 import { analyzePage } from "@/actions/seo-analyzer";
+import { saveSeoOverride } from "@/actions/seo-editor";
 
 export default function ConsoleDashboard() {
   const [targetPath, setTargetPath] = useState("/");
   const [primaryKeyword, setPrimaryKeyword] = useState("Architects");
   const [isLoading, setIsLoading] = useState(false);
   const [pageData, setPageData] = useState<SeoPageData | null>(null);
+  const [isEditingSeo, setIsEditingSeo] = useState(false);
+  const [editTitle, setEditTitle] = useState("");
+  const [editDesc, setEditDesc] = useState("");
+  const [editKeywords, setEditKeywords] = useState("");
+  const [isSaving, setIsSaving] = useState(false);
+
+  const handleEditClick = () => {
+    setIsEditingSeo(true);
+    setEditTitle(pageData?.title || "");
+    setEditDesc(pageData?.description || "");
+    // Fallback if keywords is missing
+    setEditKeywords(pageData?.title ? "Architects in Kannur, Interior Design" : ""); 
+  };
+
+  const handleSaveSeo = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSaving(true);
+    try {
+      const kws = editKeywords.split(",").map(k => k.trim()).filter(Boolean);
+      const res = await saveSeoOverride(targetPath, { title: editTitle, description: editDesc, keywords: kws });
+      if (res.success) {
+        alert("SEO override saved successfully! It will reflect immediately on the website.");
+        setIsEditingSeo(false);
+        // Re-analyze
+        const data = await analyzePage(targetPath, primaryKeyword);
+        if (data) setPageData(data);
+      } else {
+        alert("Failed to save SEO override.");
+      }
+    } catch (error) {
+      alert("Error saving.");
+    }
+    setIsSaving(false);
+  };
 
   const handleAnalyze = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -116,6 +151,46 @@ export default function ConsoleDashboard() {
       {/* Results Dashboard */}
       {score && pageData && (
         <div className="space-y-8 animate-in slide-in-from-bottom-4 duration-500">
+          
+          <div className="flex justify-between items-center bg-[#16181d] border border-brand-gold/30 p-6 rounded-xl">
+            <div>
+              <h3 className="text-xl font-bold text-white">Direct SEO Optimization</h3>
+              <p className="text-gray-400 text-sm mt-1">Found mistakes? Edit the SEO metadata for this specific path directly.</p>
+            </div>
+            <button 
+              onClick={handleEditClick}
+              className="border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black px-6 py-2 rounded-md font-bold transition-colors"
+            >
+              Fix SEO Mistakes
+            </button>
+          </div>
+
+          {isEditingSeo && (
+            <div className="bg-[#1a1d24] border border-brand-gold/50 p-6 rounded-xl animate-in zoom-in-95 duration-200">
+              <h3 className="text-xl font-bold text-brand-gold mb-4">Edit SEO for {targetPath}</h3>
+              <form onSubmit={handleSaveSeo} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Meta Title</label>
+                  <input type="text" value={editTitle} onChange={(e) => setEditTitle(e.target.value)} className="w-full bg-[#16181d] border border-gray-700 rounded-md px-4 py-3 text-white focus:border-brand-gold focus:outline-none" required />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Meta Description</label>
+                  <textarea value={editDesc} onChange={(e) => setEditDesc(e.target.value)} rows={3} className="w-full bg-[#16181d] border border-gray-700 rounded-md px-4 py-3 text-white focus:border-brand-gold focus:outline-none" required />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Keywords (comma separated)</label>
+                  <input type="text" value={editKeywords} onChange={(e) => setEditKeywords(e.target.value)} className="w-full bg-[#16181d] border border-gray-700 rounded-md px-4 py-3 text-white focus:border-brand-gold focus:outline-none" required />
+                </div>
+                <div className="flex gap-4 pt-4">
+                  <button type="button" onClick={() => setIsEditingSeo(false)} className="px-6 py-3 border border-gray-700 rounded-md text-white hover:bg-gray-800 transition-colors">Cancel</button>
+                  <button type="submit" disabled={isSaving} className="px-6 py-3 bg-brand-gold text-black font-bold rounded-md hover:bg-white transition-colors disabled:opacity-50">
+                    {isSaving ? "Saving..." : "Save Override to Live Website"}
+                  </button>
+                </div>
+              </form>
+            </div>
+          )}
+
           {/* Top Metrics Row */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-[#16181d] border border-gray-800 p-6 rounded-xl relative overflow-hidden">

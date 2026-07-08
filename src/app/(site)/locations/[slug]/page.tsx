@@ -2,6 +2,7 @@ import { targetLocations } from "@/data/locations";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
+import { getSeoOverride } from "@/actions/seo-editor";
 import Image from "next/image";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { FAQ } from "@/components/shared/FAQ";
@@ -28,6 +29,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (desc.length < 150) desc += " Contact our expert team today to begin planning your dream home.";
     if (desc.length < 150) desc += " Let us build your vision.";
     if (desc.length > 160) desc = desc.substring(0, 157) + "...";
+    
+    const targetPath = `/locations/${location.slug}`;
+    const override = await getSeoOverride(targetPath);
+    if (override) {
+      return {
+        title: override.title,
+        description: override.description,
+        keywords: override.keywords,
+        alternates: { canonical: targetPath },
+      };
+    }
 
     const keywordMap: Record<string, string[]> = {
       'kannur-town': ['Architects in Kannur Town', 'Interior Designers in Kannur Town', 'Builders in Kannur Town'],
@@ -57,7 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: desc,
       keywords: specificKeywords,
       alternates: {
-        canonical: `/locations/${location.slug}`,
+        canonical: targetPath,
       },
     };
 }

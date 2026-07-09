@@ -19,9 +19,11 @@ def process_logo():
     img = Image.frombytes("RGBA", [pix.width, pix.height], pix.samples)
     arr = np.array(img)
     
-    # 1. Make white background fully transparent
-    white_mask = (arr[:, :, 0] > 240) & (arr[:, :, 1] > 240) & (arr[:, :, 2] > 240)
-    arr[white_mask, 3] = 0
+    # 1. Make black/dark background fully transparent
+    # The logo is yellow/gold, so we remove dark pixels where max(R,G,B) < 180 (same as original script)
+    max_rgb = np.max(arr[:, :, :3], axis=2)
+    dark_mask = max_rgb < 180
+    arr[dark_mask, 3] = 0
     
     # 2. Find overall bounding box of non-transparent pixels
     non_transparent = arr[:, :, 3] > 0

@@ -6,8 +6,14 @@ import { BLOGS_QUERY } from "@/sanity/lib/queries";
 import { urlForImage } from "@/sanity/lib/image";
 
 export async function LatestBlogs() {
-  const allBlogs = await client.fetch<any[]>(BLOGS_QUERY);
-  const blogs = allBlogs.slice(0, 3);
+  let blogs: any[] = [];
+  try {
+    const allBlogs = await client.fetch<any[]>(BLOGS_QUERY);
+    blogs = allBlogs.slice(0, 3);
+  } catch (error) {
+    console.error("Failed to fetch latest blogs:", error);
+  }
+
   return (
     <section className="py-32 bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

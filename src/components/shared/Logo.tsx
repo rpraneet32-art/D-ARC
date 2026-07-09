@@ -12,7 +12,7 @@ export function Logo({ className = "" }: { className?: string }) {
           height={100}
           className="w-[160px] md:w-[220px] h-auto object-contain drop-shadow-sm"
           priority
-          quality={100}
+          unoptimized={true}
         />
       </div>
     </Link>

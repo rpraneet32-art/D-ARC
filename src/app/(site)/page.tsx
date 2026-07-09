@@ -23,6 +23,7 @@ import { CoverageAreas } from '@/components/home/CoverageAreas';
 import { LatestBlogs } from '@/components/home/LatestBlogs';
 import { MobileStickyCTA } from '@/components/layout/MobileStickyCTA';
 import { FAQ } from '@/components/shared/FAQ';
+import { HeroSlider } from '@/components/home/HeroSlider';
 
 export default function Home() {
   const schemaData = [
@@ -58,21 +59,8 @@ export default function Home() {
       />
       {/* 1. Hero */}
       <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="/assets/projects/architects-kannur-villa.webp" 
-            alt="Luxury villa designed by architects in Kannur" 
-            fill 
-            sizes="100vw"
-            className="object-cover opacity-60"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-black/40 to-brand-black/90" />
-          <div className="absolute bottom-4 left-4 z-20 text-white/50 text-xs hidden sm:block">
-            Luxury villa designed by leading architects in Kannur
-          </div>
-        </div>
-        <div className="relative z-10 text-center max-w-4xl px-4">
+        <HeroSlider />
+        <div className="relative z-30 text-center max-w-4xl px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-brand-white mb-6 leading-tight">
             Architects in Kannur <br />
             <span className="text-brand-gold">Creating Luxury Homes</span>

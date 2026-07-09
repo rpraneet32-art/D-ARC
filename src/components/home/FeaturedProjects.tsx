@@ -6,9 +6,14 @@ import { PORTFOLIO_QUERY } from "@/sanity/lib/queries";
 import { urlForImage } from "@/sanity/lib/image";
 
 export async function FeaturedProjects() {
-  const allProjects = await client.fetch<any[]>(PORTFOLIO_QUERY);
-  // Slice to only show top 4 projects
-  const projects = allProjects.slice(0, 4);
+  let projects: any[] = [];
+  try {
+    const allProjects = await client.fetch<any[]>(PORTFOLIO_QUERY);
+    projects = allProjects.slice(0, 4);
+  } catch (error) {
+    console.error("Failed to fetch portfolio projects:", error);
+  }
+  
   return (
     <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

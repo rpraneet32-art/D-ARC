@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import Script from "next/script";
 import "../globals.css";
 
 const inter = Inter({
@@ -100,8 +101,10 @@ export default function RootLayout({
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe></noscript>
         
         {/* Analytics Scripts */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-        <script
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -112,7 +115,9 @@ export default function RootLayout({
           }}
         />
         {/* Microsoft Clarity */}
-        <script
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){

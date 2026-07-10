@@ -10,7 +10,7 @@ export function Logo({ className = "" }: { className?: string }) {
           alt="D-Arc Architectural Interior Logo"
           width={260}
           height={100}
-          className="w-[160px] md:w-[220px] h-auto object-contain drop-shadow-sm"
+          className="w-[96px] md:w-[132px] h-auto object-contain drop-shadow-sm"
           priority
           unoptimized={true}
         />

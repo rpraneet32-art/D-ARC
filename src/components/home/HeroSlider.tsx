@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const premiumImages = [
-  { src: '/assets/projects/architects-kannur-villa.webp', alt: 'Luxury villa designed by architects in Kannur' },
   { src: '/assets/expertise/luxury-villas-1.png', alt: 'Premium luxury villa exterior at dusk' },
   { src: '/assets/expertise/residential-architecture-1.png', alt: 'Modern residential architecture interior' },
   { src: '/assets/expertise/commercial-architecture-1.png', alt: 'High-end commercial architecture' },
@@ -44,9 +43,6 @@ export function HeroSlider() {
         </motion.div>
       </AnimatePresence>
       <div className="absolute inset-0 bg-gradient-to-b from-brand-black/40 to-brand-black/90 z-10" />
-      <div className="absolute bottom-4 left-4 z-20 text-white/50 text-xs hidden sm:block">
-        {premiumImages[currentIndex].alt}
-      </div>
     </div>
   );
 }

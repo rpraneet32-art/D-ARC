@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${post.title} | D-Arc Architectural Interior Blog`,
     description: post.title,
     openGraph: {
-      images: post.mainImage ? [urlForImage(post.mainImage)?.url() || ''] : [],
+      images: post.mainImage?.asset ? [urlForImage(post.mainImage)?.url() || ''] : [],
     }
   };
 }
@@ -66,7 +66,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
 
         {/* Main Image */}
         <FadeIn direction="up" className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden rounded-sm mb-16 border border-white/10">
-          {post.mainImage ? (
+          {post.mainImage?.asset ? (
             <Image 
               src={urlForImage(post.mainImage)?.url() || '/assets/blog/placeholder.jpg'}
               alt={post.mainImage.alt || post.title}
@@ -111,7 +111,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               {relatedPosts.map((p: any) => (
                 <Link key={p._id} href={`/blog/${p.slug?.current || '#'}`} className="group block">
                   <div className="relative h-48 w-full mb-4 overflow-hidden rounded-sm border border-white/10">
-                    {p.mainImage ? (
+                    {p.mainImage?.asset ? (
                       <Image 
                         src={urlForImage(p.mainImage)?.url() || ''}
                         alt={p.mainImage.alt || p.title}

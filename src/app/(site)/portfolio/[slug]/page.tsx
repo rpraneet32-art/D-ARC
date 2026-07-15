@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${project.title} | D-Arc Architectural Interior`,
     description: project.description || `View our ${project.title} project.`,
     openGraph: {
-      images: project.mainImage ? [urlForImage(project.mainImage)?.url() || ''] : [],
+      images: project.mainImage?.asset ? [urlForImage(project.mainImage)?.url() || ''] : [],
     }
   };
 }
@@ -39,7 +39,7 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
     <div className="min-h-screen bg-brand-black pt-24 pb-20 text-brand-white">
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden mb-16">
-        {project.mainImage ? (
+        {project.mainImage?.asset ? (
           <Image 
             src={urlForImage(project.mainImage)?.url() || '/assets/projects/placeholder.jpg'}
             alt={project.mainImage.alt || project.title}
@@ -142,7 +142,7 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
               {relatedProjects.map((p: any) => (
                 <Link key={p._id} href={`/portfolio/${p.slug?.current || '#'}`} className="group block">
                   <div className="relative h-64 w-full mb-4 overflow-hidden rounded-sm border border-white/10">
-                    {p.mainImage ? (
+                    {p.mainImage?.asset ? (
                       <Image 
                         src={urlForImage(p.mainImage)?.url() || ''}
                         alt={p.mainImage.alt || p.title}

@@ -37,7 +37,7 @@ export default async function PortfolioPage() {
               <FadeIn key={project._id} direction="up" className="group relative overflow-hidden rounded-sm cursor-pointer border border-white/10">
                 <Link href={`/portfolio/${project.slug?.current || '#'}`} className="block h-full">
                   <div className="relative h-80 w-full">
-                    {project.mainImage ? (
+                    {project.mainImage?.asset ? (
                       <Image 
                         src={urlForImage(project.mainImage)?.url() || '/assets/projects/placeholder.jpg'}
                         alt={project.mainImage.alt || project.title}

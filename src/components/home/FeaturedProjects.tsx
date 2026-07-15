@@ -36,7 +36,7 @@ export async function FeaturedProjects() {
             <FadeIn key={idx} direction="up" delay={idx * 0.2} className="group cursor-pointer">
               <div className="relative h-[600px] w-full mb-6 overflow-hidden rounded-sm">
                 <Image 
-                  src={project.mainImage ? urlForImage(project.mainImage).url() : '/assets/projects/placeholder.jpeg'}
+                  src={project.mainImage?.asset ? urlForImage(project.mainImage).url() : '/assets/projects/placeholder.jpeg'}
                   alt={project.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

@@ -36,7 +36,7 @@ export default async function BlogPage() {
             {posts.map((post: any) => (
               <FadeIn key={post._id} direction="up" className="bg-white/5 border border-white/10 rounded-sm overflow-hidden flex flex-col group">
                 <Link href={`/blog/${post.slug?.current || '#'}`} className="block relative h-64 w-full overflow-hidden">
-                  {post.mainImage ? (
+                  {post.mainImage?.asset ? (
                     <Image 
                       src={urlForImage(post.mainImage)?.url() || '/assets/blog/placeholder.jpg'}
                       alt={post.mainImage.alt || post.title}
